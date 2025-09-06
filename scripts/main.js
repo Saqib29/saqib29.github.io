@@ -408,7 +408,12 @@ function renderExperience(d) {
             <div class="experience-header">
               <div class="experience-title-group">
                 <h3 class="experience-role">${exp.role}</h3>
-                <div class="experience-company">${exp.company}</div>
+                <div class="experience-company">
+                  ${exp.companyUrl ? 
+                    `<a href="${exp.companyUrl}" target="_blank" rel="noopener" class="company-link">${exp.company}</a>` : 
+                    exp.company
+                  }
+                </div>
               </div>
               <div class="experience-meta">
                 <div class="experience-period">${exp.period}</div>

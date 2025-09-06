@@ -146,6 +146,7 @@
   "experience": [
     {
       "company": "Sayburgh Solution Ltd",
+      "companyUrl": "https://sayburgh.com/",
       "role": "Software Developer",
       "period": "August 2023 - Present",
       "location": "Dhaka, Bangladesh",
@@ -163,6 +164,7 @@
     },
     {
       "company": "Lexoro GmbH",
+      "companyUrl": "https://lexoro.ai/",
       "role": "Software Developer",
       "period": "April 2021 - April 2023",
       "location": "Mannheim, Germany",
@@ -182,6 +184,7 @@
     },
     {
       "company": "American International University - Bangladesh (AIUB)",
+      "companyUrl": "https://www.aiub.edu/",
       "role": "Teaching Assistant",
       "period": "Feb 2021 - Apr 2021",
       "location": "kuril, Dhaka, Bangladesh.",
