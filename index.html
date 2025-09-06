@@ -1,508 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Aminul Islam Saqib - Software Engineer, Passionate Programmer.</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Saqib</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#project">Project</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#blogs">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="site-title">Portfolio</title>
+    <meta name="description" content="" id="site-description" />
+    <meta property="og:title" content="" id="og-title" />
+    <meta property="og:description" content="" id="og-description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" id="og-url" />
+    <meta property="og:image" content="" id="og-image" />
+    <!-- Favicon / App Icons -->
+    <link rel="icon" type="image/png" href="./assets/images/saqib_image.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/images/saqib_image.png" />
+    <link rel="apple-touch-icon" href="./assets/images/saqib_image.png" />
 
+    <!-- TailwindCSS via CDN for speed of iteration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#4f46e5',
+                dark: '#4338ca'
+              }
+            }
+          }
+        },
+        darkMode: 'class'
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-backdrop-blur:bg-white/60 bg-white/80 dark:bg-gray-900/80 border-b border-gray-100 dark:border-gray-800">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="font-semibold text-lg" id="nav-brand">My Portfolio</a>
+        <nav class="hidden md:flex items-center gap-6" id="nav-links">
+          <!-- Injected links -->
         </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Aminul Islam
-                        <span class="text-primary">Saqib</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        Dhaka · Bangladesh
-                        <a href="mailto:saqib.aminul29@gmail.com">saqib.aminul29@gmail.com</a>
-                    </div>
-                    <p class="lead mb-5">
-                        I am a professional software developer, passionate programmer, and tech enthusiast with over three years of experience in software development. I have worked on diverse projects across SaaS, microservices, EdTech, and MedTech domains. While I specialize in the Node.js ecosystem, I am also proficient in other platforms like Spring Boot, .NET, and Django/Flask.
-                        <br><br>
-                        I focus on writing clean, testable, and reusable code, adhering to SOLID, DRY, and KISS principles. I leverage best design patterns and architectures to optimize applications for maximum performance in Agile environments. I thrive on challenges that provide opportunities to learn new skills and explore emerging technologies. Committed to excellence, I aim to deliver high-quality software solutions using cutting-edge technologies.
-                    </p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/saqib-aminul/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/Saqib29"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="mailto:saqib.aminul29@gmail.com"><i class="fas fa-envelope"></i></a>
-                        <a class="social-icon" href="https://drive.google.com/file/d/1gzS7XfFmLdXmL0x1TWTmLEH0fJ5J2I24/view?usp=sharing" target="_blank" alt="Resume" download><i class="fas fa-file"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Backend Developer</h3>
-                            <div class="subheading mb-3">
-                                Gain Solution Ltd
-                                <a href="https://www.gainhq.com/" target="_blank">
-                                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/15/external-link.png" alt="external-link"/>
-                                </a>
-                            </div>
-                            <p><strong>Key Responsibilities:</strong></p>
-                            <ul>
-                                change this......................
-                                <li>Developed key features for the <a href="https://somoy.school/">Somoy School</a>  EdTech platform, including lesson module locks, podcasts, OTP and QR code generators, token management, certificates, quizzes, authentication, and client-side APIs, ensuring a secure and seamless user experience.</li>
-                                <li><strong>Dockerize</strong> projects from scratch to maintain consistent development environments.</li>
-                                <li>Conducted code reviews to optimize performance and foster team collaboration.</li>
-                                <li>Worked on a <strong>microservices-based</strong> POS system, designing architecture and APIs, and implemented <strong>RabbitMQ</strong> for reliable communication between services.</li>
-                                <li>Integrated online <strong>payment gateways</strong> to streamline transactions.</li>
-                                <li>Developed a livestock sales management project for a special client, focusing on client-side APIs and secure data handling.</li>
-                                <li>Enhanced expertise in backend development, microservices architecture, and secure payment processing with the bKash payment gateway.</li>
-                                ...............................................
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">November 2024 - Present</span></div>
-                    </div>
-
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Backend Developer</h3>
-                            <div class="subheading mb-3">
-                                Sayburgh Solution Ltd
-                                <a href="https://sayburgh.com/" target="_blank">
-                                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/15/external-link.png" alt="external-link"/>
-                                </a>
-                            </div>
-                            <p><strong>Key Responsibilities:</strong></p>
-                            <ul>
-                                <li>Developed key features for the <a href="https://somoy.school/">Somoy School</a>  EdTech platform, including lesson module locks, podcasts, OTP and QR code generators, token management, certificates, quizzes, authentication, and client-side APIs, ensuring a secure and seamless user experience.</li>
-                                <li><strong>Dockerize</strong> projects from scratch to maintain consistent development environments.</li>
-                                <li>Conducted code reviews to optimize performance and foster team collaboration.</li>
-                                <li>Worked on a <strong>microservices-based</strong> POS system, designing architecture and APIs, and implemented <strong>RabbitMQ</strong> for reliable communication between services.</li>
-                                <li>Integrated online <strong>payment gateways</strong> to streamline transactions.</li>
-                                <li>Developed a livestock sales management project for a special client, focusing on client-side APIs and secure data handling.</li>
-                                <li>Enhanced expertise in backend development, microservices architecture, and secure payment processing with the bKash payment gateway.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2023 - November 2024</span></div>
-                    </div>
-                    
-
-                    <!-- Second -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Developer</h3>
-                            <div class="subheading mb-3">
-                                Lexoro GmbH
-                                <a href="https://lexoro.ai/" target="_blank">
-                                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/15/external-link.png" alt="external-link"/>
-                                </a>
-                            </div>
-                            <p><strong>Key Responsibilities:</strong></p>
-                            <ul>
-                                <li>Played a key role in backend development and data automation projects.</li>
-                                <li>Developed web crawlers using <strong>Node.js</strong> and <strong>Python</strong> to automate data collection and create unified data models.</li>
-                                <li>Built <strong>REST APIs</strong> and business logic with <strong>Node.js</strong> and <strong>Spring Boot</strong> for efficient data processing and seamless integration with frontend applications.</li>
-                                <li>Contributed to frontend development using <strong>Flutter</strong>, enhancing the user interface and experience.</li>
-                                <li>Created an automated search tool with <strong>Selenium</strong> in Python to improve data retrieval processes for customers.</li>
-                                <li>Collaborated closely with cross-functional teams to enhance user experience, optimize application performance, and implement new features.</li>
-                                <li>Maintained a strong emphasis on writing <strong>well-structured,</strong> <strong>clean code</strong> and conducting thorough testing to ensure software reliability.</li>
-                                <li>Engaged in agile development practices, effectively managing various aspects of the software development lifecycle.</li>
-                                <li>Delivered high-quality solutions that met both user and business needs.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">April 2021 - April 2023</span></div>
-                    </div>
-                    
-                    <!-- Third -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Teaching Assistant</h3>
-                            <div class="subheading mb-3">American International University - Bangladesh (AIUB)</div>
-                            <p><strong>Responsibilities:</strong></p>
-                            <ul>
-                                <li>Taught the assigned curriculum in one-to-three-hour classroom sessions, ensuring clarity and engagement.</li>
-                                <li>Answered student questions and provided additional support during and after class sessions.</li>
-                                <li>Evaluated student assessments, including assignments, quizzes, and exams, and provided constructive feedback.</li>
-                                <li>Maintained accurate records of student grades, attendance, and progress to monitor academic development.</li>
-                                <li>Assisted in preparing course materials and supporting the lead instructor with administrative tasks.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Feb 2021 - Apr 2021</span></div>
-                    </div>
-                    
-                    
-                    
-                </div>
-            </section>
-            <hr class="m-0" />
-
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading skill-heading mb-1 border-bottom">Programming Languages</div>
-                    <div class="lead mb-3">
-                        JavaScript | TypeScript | Python | Java | Dart | PHP | C# | C++ | C
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">Frameworks &amp; Platforms</div>
-                    <div class="lead mb-3">
-                        Express.js | NestJs | Spring-boot | Flask | React | Flutter
-                    </div>
-                    
-                    <div class="subheading mb-1 border-bottom">Databases</div>
-                    <div class="lead mb-3">
-                        PostgreSQL | MySQL | SQLite | MongoDB | Redis
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">API Design and Development</div>
-                    <div class="lead mb-3">
-                        RESTful APIs | GraphQL
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">Tools</div>
-                    <div class="lead mb-3">
-                        Docker | Git | RabbitMQ | Swagger
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">Software Architecture Patterns</div>
-                    <div class="lead mb-3">
-                        MVC | REST API | Microservice | Monolithic Applications | Event Driven Architecture | TDD
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">Front End</div>
-                    <div class="lead mb-3">
-                        HTML5 | CSS3 | Bootstrap | JavaScript | jQuery | React
-                    </div>
-    
-                    <div class="subheading mb-1 border-bottom">Security</div>
-                    <div class="lead mb-3">
-                        JWT | Keycloak | SSL/TLS | Encryption Web Security
-                    </div>
-
-                    <div class="subheading mb-1 border-bottom">Testing and Debugging</div>
-                    <div class="lead mb-3">
-                        Unit Testing | Integration Testing | TDD | Debugging Tools
-                    </div>
-    
-                </div>
-            </section>
-            <hr class="m-0" />
-
-            <!-- project-->
-            <section class="resume-section" id="project">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Projects</h2>
-                    <p>Below are some of the projects I have worked on. Scroll to explore more.</p>
-
-                    
-
-                    <h4 class="mt-5 mb-3">Professional Projects</h4>
-
-                    <!-- Professional Projects Container -->
-                    <div class="projects-container">
-                        <div class="project-item">
-                            <h5>
-                                Somoyer School
-                                <a href="https://www.somoy.school" target="_blank">
-                                    <img width="15" height="15" src="https://img.icons8.com/ios-glyphs/15/external-link.png" alt="external-link" />
-                                </a>
-                            </h5>
-                            <p>
-                                Somoyer School is an e-learning platform by Somoy Media Ltd. offering various digital educational solutions, including
-                                online courses, workshops, and career development services. The platform provides free and premium courses, with
-                                discounts for selected courses. Each course typically includes video lessons, notes, quizzes, and assignments.
-                                Instructors can evaluate student progress, and upon completion, learners receive a verified certificate from the
-                                instructor.
-                            </p>
-
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Developed and maintained backend architecture, features, ensuring scalable and efficient server-side operations.</li>
-                                <li>Designed and implemented RESTful APIs to handle functionalities such as lesson unlocking, assignment submission, token authorization/authentication, promo code, QR code, and certificate generation.</li>
-                                <li>Integrated MongoDB as the database to manage data efficiently, optimizing queries for enhanced performance.</li>
-                                <li>Implemented middlewares, gaurds to add role base access controls.</li>
-                                <li>Collaborated closely with frontend developers to ensure seamless API integration and a smooth user experience.</li>
-                                <li>Conducted code reviews and worked in an Agile environment to ensure high-quality, maintainable code.</li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <!-- Repeat similar structure for other projects... -->
-                        <div class="project-item">
-                            <h5>(B2C) Online Food Delivery System</h5>
-                            <p>
-                                An online food delivery platform based on a Business-to-Customer (B2C) model. Customers can order food from various
-                                restaurants through the app, customize their orders by adding or removing items, add-ons, and flavors, and apply
-                                vouchers for discounts. They can also track their order status in real-time. The platform supports both online and cash
-                                payments. This project is not in production yet.
-                            </p>
-
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Bootstrapped the project with a microservices architecture and developed the project structure.</li>
-                                <li>Used RabbitMQ for establishing communication between services.</li>
-                                <li>Implemented token-based authentication and authorization using access and refresh tokens.</li>
-                                <li>Integrated CORS for the backend and designed APIs for the frontend.</li>
-                                <li>Implemented JWT authentication and OTP verification.</li>
-                                <li>Integrated the Aamarpay payment gateway for secure transactions.</li>
-                            </ul>  
-                        </div>                      
-                        <hr>
-
-                        <div class="project-item">
-                            <h5>Livestock related projects</h5>
-                            <p>
-                                This project is focused on payment execution for sold animals and was developed for a government entity to track
-                                real-time data updates and ensure safe payment gateway integration. Although the project is not yet in production, it
-                                prioritizes security.
-                            </p>
-    
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Bootstrapped the project using NestJS and integrated a MongoDB database into the backend.</li>
-                                <li>Implemented Authentication and Authorization to enhance security and role-based access control.</li>
-                                <li>Designed APIs and developed the service layer.</li>
-                                <li>Integrated the bKash payment gateway for payment execution.</li>
-                                <li>Collaborated with the frontend team to ensure seamless integration.</li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <div class="project-item">
-                            <h5>Meda-x</h5>
-                            <p>
-                                A data collection and analysis software for medical researchers, designed as a resource aggregation application.
-                            </p>
-    
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Developed a web crawler using Node.js and Cheerio to collect data from various websites, with crawled data tracked in Redis.</li>
-                                <li>Built backend business logic, service layers, and REST APIs using Spring Boot.</li>
-                                <li>Stored collected data in PostgreSQL and wrote optimized queries for efficient data transactions.</li>
-                                <li>Bootstrapped the frontend web application with Flutter.</li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <!-- These will be update letter -->
-                        <!-- <div class="project-item">
-                            <h5>KarlsTorz</h5>
-                            <p>A short description about KarlsTorz project will be here.</p>
-    
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Each point will go here.</li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <div class="project-item">
-                            <h5>Hartmann</h5>
-                            <p>A short description about Hartmann project will be here.</p>
-
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Each point will go here.</li>
-                            </ul>
-                        </div>
-                        <hr>
-
-                        <div class="project-item">
-                            <h5>MIT-crawler</h5>
-                            <p>A short description about MIT-crawler project will be here.</p>
-    
-                            <strong>My Role and Responsibilities:</strong>
-                            <ul>
-                                <li>Each point will go here.</li>
-                            </ul>
-                        </div>
-                        <hr> -->
-                    </div>
-
-
-
-                    <!-- Slider Container 1 -->
-                    <h4 class="mt-5 mb-3">Personal Projects</h4>
-                    <div class="slider-container">
-                        <button class="slider-control prev" aria-label="Previous">
-                            <span>&lt;</span>
-                        </button>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <!-- Cards for first slider will be dynamically generated here by JavaScript -->
-                            </div>
-                        </div>
-                        <button class="slider-control next" aria-label="Next">
-                            <span>&gt;</span>
-                        </button>
-                    </div>
-            
-                    <!-- Add another slider here -->
-                    <h4 class="mt-5 mb-3">Team Projects</h4>
-                    <div class="slider-container">
-                        <button class="slider-control prev" aria-label="Previous">
-                            <span>&lt;</span>
-                        </button>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <!-- Cards for second slider will be dynamically generated here by JavaScript -->
-                            </div>
-                        </div>
-                        <button class="slider-control next" aria-label="Next">
-                            <span>&gt;</span>
-                        </button>
-                    </div>
-                    <br><br>
-                    <p class="mb-0">See more work on my <a href="https://github.com/Saqib29" target="_blank" rel="noopener noreferrer">github</a> profile.</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">American International University-Bangladesh (AIUB)</h3>
-                            <div class="subheading mb-3">BSc - Bachelor of science</div>
-                            <div>Computer Science and Engineering (CSE)</div>
-                            <p>GPA: 3.44 out of 4</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">Sep 2017 - April 2021</span></div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Govt. Tolaram College</h3>
-                            <div class="subheading mb-3">HSC – Higher Secondary School Certificate</div>
-                            <div>Group: Science</div>
-                            <p>GPA: 5.0 out of 5.0</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">passing year 2016</span></div>
-                    </div>
-                    <br>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Adarsha School Narayanganj</h3>
-                            <div class="subheading mb-3">SSC - Secondary School Certificate</div>
-                            <div>Group: Science</div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">passing year 2014</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            
-            
-            <!-- Blogs-->
-            <section class="resume-section" id="blogs">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Blogs</h2>
-                    <div class="blog-card-container">
-                        <!-- Card 1 -->
-                        <div class="blog-card">
-                            <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftdtj6n0cckxblfcqzl6q.png" alt="Worker Threads">
-                            <div class="blog-info">
-                                <h3>Enhance Node.js Server Performance with Worker Threads</h3>
-                                <p>Learn how to use worker threads in Node.js to enhance server performance by offloading CPU-intensive tasks...</p>
-                                <a href="https://dev.to/saqib29/enhance-nodejs-server-performance-with-worker-threads-igh" target="_blank" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="blog-card">
-                            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*_VcQWC1tCU3dEfner6bvrw.png" alt="Worker Threads">
-                            <div class="blog-info">
-                                <h3>Memory leaks in NodeJs</h3>
-                                <p>A memory leak in Node.js occurs when memory is no longer needed but remains...</p>
-                                <a href="https://medium.com/@saqibaminul/memory-leaks-in-nodejs-2dc4b6479c6f" target="_blank" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="blog-card">
-                            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*CLQTElMPnar12SOnKjIvqA.jpeg" alt="Worker Threads">
-                            <div class="blog-info">
-                                <h3>Token-based authentication and authorization using access tokens and refresh tokens</h3>
-                                <p>Token-based authentication and authorization using access tokens and refresh tokens is a popular...</p>
-                                <a href="https://medium.com/@saqibaminul/token-based-authentication-and-authorization-using-access-tokens-and-refresh-tokens-3721e7d45a7f" target="_blank" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="blog-card">
-                            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*5q22vgB0IPx-HRRhG5d4vQ.png" alt="Worker Threads">
-                            <div class="blog-info">
-                                <h3>Stateful vs Stateless</h3>
-                                <p>Stateful and stateless are two fundamentals in computing, particularly in application design, APIs, and...</p>
-                                <a href="https://medium.com/@saqibaminul/stateful-vs-stateless-d71fa2ab51a7" target="_blank" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Add more cards here -->
-                    </div>
-                </div>
-            </section>
-            
-
-            <!-- Contact-->
-            <section class="resume-section" id="contact">
-                <div class="resume-section-contact">
-                    <h2 class="mb-5">Contact Me</h2>
-                    <p>If you have any questions, feel free to reach out. I'll get back to you as soon as possible!</p>
-                    <p>
-                        <span><strong>Aminul Islam Saqib</strong></span><br>
-                        <span><a href="mailto:saqib.aminul29@gmail.com">saqib.aminul29@gmail.com</a></span><br>
-                        <span><a href="tel:+8801821500050">+8801821500050</a></span><br><br>
-
-                        <span>
-                            <a href="https://www.linkedin.com/in/saqib-aminul/" target="_blank"><img width="20" height="20" src="https://img.icons8.com/android/20/linkedin.png" alt="linkedin"/></a>
-                            <a href="https://github.com/Saqib29" target="_blank"><img width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/github.png" alt="github"/></a>
-                            <a href="https://stackoverflow.com/users/10570045/saqib" target="_blank"><img width="24" height="24" src="https://img.icons8.com/windows/24/stackoverflow.png" alt="stackoverflow"/></a>
-                            <a href="https://saqib29.github.io/" target="_blank"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/internet.png" alt="internet"/></a>
-                        </span>
-                    </p>
-                </div>
-            </section>
-            
+        <div class="flex items-center gap-3">
+          <button id="dark-toggle" class="p-2 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800" aria-label="Toggle dark mode">🌙</button>
+          <a id="resume-link" class="px-3 py-2 rounded-md bg-primary text-white hover:bg-primary-dark text-sm" href="#" target="_blank" rel="noopener">Resume</a>
         </div>
+      </div>
+    </header>
 
-  
-        <footer class="footer">
-            <p>© 2024 Saqib</p>
-        </footer>
-          
+    <main>
+      <!-- Hero -->
+      <section id="home" class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold leading-tight"></h1>
+          <p id="hero-subtitle" class="mt-4 text-lg text-gray-600 dark:text-gray-300"></p>
+          <div class="mt-6 flex gap-3" id="hero-ctas">
+            <!-- Buttons injected -->
+          </div>
+          <div class="mt-6 flex gap-4 text-xl" id="social-links">
+            <!-- Social icons injected -->
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <img id="hero-image" src="" alt="Portrait" class="w-56 h-56 md:w-72 md:h-72 object-cover rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800" />
+        </div>
+      </section>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="section-bg-pattern"></div>
+        <div class="section-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <div id="about-cards" class="about-cards"></div>
+          <div id="about-content" class="prose dark:prose-invert max-w-none"></div>
+        </div>
+        <div class="section-divider"></div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section alt">
+        <div class="section-bg-pattern"></div>
+        <div class="section-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div id="skills-filters" class="skills-filters"></div>
+          <div id="skills-list" class="skills-grid"></div>
+        </div>
+        <div class="section-divider"></div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section alt">
+        <div class="section-bg-pattern"></div>
+        <div class="section-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">Experience</h2>
+          <ol id="experience-timeline" class="relative border-s border-gray-200 dark:border-gray-700"></ol>
+        </div>
+        <div class="section-divider"></div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="section-bg-pattern"></div>
+        <div class="section-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div id="projects-grid" class="flex flex-col gap-6"></div>
+        </div>
+        <div class="section-divider"></div>
+      </section>
+
+      
+
+      <!-- Contact -->
+      <section id="contact" class="section alt">
+        <div class="section-bg-pattern"></div>
+        <div class="section-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div id="contact-content" class="space-y-4"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-100 dark:border-gray-800">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div id="footer-text">© <span id="year"></span> <span id="site-owner"></span>. All rights reserved.</div>
+        <div>Built with ❤️. <a class="underline hover:no-underline" href="#home">Back to top ↑</a></div>
+      </div>
+    </footer>
+
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
 </html>

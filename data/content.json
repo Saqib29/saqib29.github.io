@@ -1,0 +1,225 @@
+{
+  "site": {
+    "title": "Aminul Islam Saqib – Portfolio",
+    "description": "Software Engineer, passionate programmer with 3+ years on Node.js and back-end frameworks; experienced across SaaS, microservices, EdTech, and MedTech.",
+    "url": "https://saqib29.github.io/",
+    "image": ""
+  },
+  "profile": {
+    "name": "Aminul Islam Saqib",
+    "resume": "https://drive.google.com/file/d/1gzS7XfFmLdXmL0x1TWTmLEH0fJ5J2I24/view"
+  },
+  "hero": {
+    "title": "Hi, I'm Aminul Islam Saqib",
+    "subtitle": "Software Engineer – Backend specialist. I build clean, testable, scalable backends and APIs.",
+    "image": "../assets/images/saqib_image.png",
+    "ctas": [
+      { "label": "Get in touch", "href": "#contact", "primary": true },
+      { "label": "GitHub", "href": "https://github.com/Saqib29", "external": true }
+    ]
+  },
+  "socials": [
+    { "label": "GitHub", "href": "https://github.com/Saqib29", "icon": "🐙" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/saqib-aminul/", "icon": "in" },
+    { "label": "Medium", "href": "https://medium.com/@saqibaminul", "external": "M" },
+    { "label": "Dev.to", "href": "https://dev.to/saqib29", "icon": "Dev" }
+  ],
+  "blogs": [
+    {
+      "title": "Memory leaks in NodeJs",
+      "excerpt": "In Node.js, memory leaks often happen due to how the V8 engine manages memory for javascript objects....",
+      "url": "https://medium.com/@saqibaminul/memory-leaks-in-nodejs-2dc4b6479c6f",
+      "source": "Medium",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*_VcQWC1tCU3dEfner6bvrw.png"
+    },
+    {
+      "title": "Token-based authentication and authorization using access tokens and refresh tokens",
+      "excerpt": "Token-based authentication and authorization using access tokens and refresh tokens is a popular method to secure APIs and web applications....",
+      "url": "https://medium.com/@saqibaminul/token-based-authentication-and-authorization-using-access-tokens-and-refresh-tokens-3721e7d45a7f",
+      "source": "Medium",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*CLQTElMPnar12SOnKjIvqA.jpeg"
+    },
+    {
+      "title": "Stateful vs Stateless",
+      "excerpt": "Stateful and stateless are two fundamentals in computing, particularly in application design, APIs...",
+      "url": "https://medium.com/@saqibaminul/stateful-vs-stateless-d71fa2ab51a7",
+      "source": "Medium",
+      "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*5q22vgB0IPx-HRRhG5d4vQ.png"
+    },
+    {
+      "title": "Enhance Node.js Server Performance with Worker Threads",
+      "excerpt": "Learn how to use worker threads in Node.js to enhance server performance by offloading CPU‑intensive tasks...",
+      "url": "https://dev.to/saqib29/enhance-nodejs-server-performance-with-worker-threads-igh",
+      "source": "Dev.to",
+      "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftdtj6n0cckxblfcqzl6q.png"
+    }
+
+  ],
+  "about": {
+    "html": "<p>I am a professional Software Engineer, passionate programmer, and tech enthusiast with over 3 years of experience in software development, specializing in the Node.js platform. I am also proficient in other backend frameworks like Spring Boot, .NET, Laravel, Django, and Flask. I have experience working on diverse projects, including SaaS, microservices, EdTech, and MedTech domains.</p><p>I focus on writing clean, testable, and reusable code that adheres to SOLID principles and utilizes best design patterns and architectures to optimize applications for maximum performance in an Agile environment. I thrive on facing challenges and exploring emerging technologies.</p>"
+  },
+  "skills": {
+    "Frontend": [
+      "JavaScript", "TypeScript", "HTML5", "CSS3", "TailwindCSS", "Flutter"
+    ],
+    "Backend": [
+      "Node.js", "NestJS", "Express", "Spring Boot", ".NET", "Laravel", "Django", "Flask"
+    ],
+    "Database": [
+      "MongoDB", "PostgreSQL", "Redis", "MySQL"
+    ],
+    "Architecture": [
+      "REST APIs", "Microservices", "RabbitMQ", "GraphQL", "Event-Driven"
+    ],
+    "DevOps & Tools": [
+      "Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"
+    ],
+    "Testing & Automation": [
+      "Jest", "Selenium", "Unit Testing", "Integration Testing", "Cheerio"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Somoyer School",
+      "company": "Somoy Media Ltd",
+      "description": "An e-learning platform offering various digital educational solutions, including online courses, workshops, and career development services. The platform provides free and premium courses with video lessons, notes, quizzes, and assignments.",
+      "status": "Live",
+      "responsibilities": [
+        "Developed and maintained backend architecture, ensuring scalable and efficient server-side operations",
+        "Designed and implemented RESTful APIs for lesson unlocking, assignment submission, token authorization/authentication, promo code, QR code, and certificate generation",
+        "Integrated MongoDB as the database to manage data efficiently, optimizing queries for enhanced performance",
+        "Implemented middlewares and guards to add role-based access controls",
+        "Collaborated closely with frontend developers to ensure seamless API integration and smooth user experience",
+        "Conducted code reviews and worked in an Agile environment to ensure high-quality, maintainable code"
+      ],
+      "tags": ["Node.js", "NestJS", "MongoDB", "REST APIs", "RBAC", "JWT", "Agile"],
+      "links": [
+        { "label": "Visit Platform", "href": "https://www.somoy.school" }
+      ]
+    },
+    {
+      "title": "B2C Online Food Delivery System",
+      "company": "Sayburgh Solution Ltd",
+      "description": "A comprehensive Business-to-Customer food delivery platform where customers can order from various restaurants, customize orders with add-ons and flavors, apply vouchers for discounts, and track order status in real-time.",
+      "status": "In Development",
+      "responsibilities": [
+        "Bootstrapped the project with microservices architecture and developed the project structure",
+        "Used RabbitMQ for establishing communication between services",
+        "Implemented token-based authentication and authorization using access and refresh tokens",
+        "Integrated CORS for the backend and designed APIs for the frontend",
+        "Implemented JWT authentication and OTP verification",
+        "Integrated the Aamarpay payment gateway for secure transactions"
+      ],
+      "tags": ["Microservices", "RabbitMQ", "JWT", "NestJS", "CORS", "OTP", "Aamarpay"],
+      "links": []
+    },
+    {
+      "title": "Livestock Payment System",
+      "company": "Government Project",
+      "description": "A secure payment execution platform for livestock transactions developed for a government entity. Focuses on real-time data tracking and safe payment gateway integration with emphasis on security and compliance.",
+      "status": "Completed",
+      "responsibilities": [
+        "Bootstrapped the project using NestJS and integrated MongoDB database into the backend",
+        "Implemented Authentication and Authorization to enhance security and role-based access control",
+        "Designed APIs and developed the service layer for payment processing",
+        "Integrated the bKash payment gateway for secure payment execution",
+        "Collaborated with the frontend team to ensure seamless integration"
+      ],
+      "tags": ["NestJS", "MongoDB", "bKash API", "RBAC", "Government", "Security"],
+      "links": []
+    },
+    {
+      "title": "Meda-X Research Platform",
+      "company": "Lexoro GmbH",
+      "description": "A comprehensive data collection and analysis software designed for medical researchers as a resource aggregation application. Enables automated data collection from multiple sources with advanced analytics capabilities.",
+      "status": "Completed",
+      "responsibilities": [
+        "Developed a web crawler using Node.js and Cheerio to collect data from various websites, with crawled data tracked in Redis",
+        "Built backend business logic, service layers, and REST APIs using Spring Boot",
+        "Stored collected data in PostgreSQL and wrote optimized queries for efficient data transactions",
+        "Bootstrapped the frontend web application with Flutter for cross-platform compatibility"
+      ],
+      "tags": ["Node.js", "Cheerio", "Redis", "Spring Boot", "PostgreSQL", "Flutter", "Data Analytics"],
+      "links": []
+    }
+  ],
+  "experience": [
+    {
+      "company": "Sayburgh Solution Ltd",
+      "role": "Software Developer",
+      "period": "August 2023 - Present",
+      "location": "Dhaka, Bangladesh",
+      "description": "Somoy School (EdTech) and other products: built secure APIs and backends; Dockerized projects; code reviews; microservices with RabbitMQ; payment gateway integrations.",
+      "highlights": [
+        "Developed key features for the Somoy School EdTech platform, including lesson module locks, podcasts, OTP and QR code generators, token management, certificates, quizzes, authentication, and client-side APIs, ensuring a secure and seamless user experience.",
+        "Dockerized projects from scratch to maintain consistent development environments.",
+        "Conducted code reviews to optimize performance and foster team collaboration.",
+        "Worked on a microservices-based POS system, designing architecture and APIs, and implemented RabbitMQ for reliable communication between services.",
+        "Integrated online payment gateways to streamline transactions.",
+        "Developed a livestock sales management project for a special client, focusing on client-side APIs and secure data handling.",
+        "Enhanced expertise in backend development, microservices architecture, and secure payment processing with the bKash payment gateway."
+      ],
+      "tech": ["Node.js", "NestJS", "MongoDB", "RabbitMQ", "Docker"]
+    },
+    {
+      "company": "Lexoro GmbH",
+      "role": "Software Developer",
+      "period": "April 2021 - April 2023",
+      "location": "Mannheim, Germany",
+      "description": "Backend development and data automation: web crawlers (Node.js/Python), REST APIs with Node.js and Spring Boot, some Flutter frontend contributions.",
+      "highlights": [
+        "Played a key role in backend development and data automation projects.",
+        "Developed web crawlers using Node.js and Python to automate data collection and create unified data models.",
+        "Built REST APIs and business logic with Node.js and Spring Boot for efficient data processing and seamless integration with frontend applications.",
+        "Contributed to frontend development using Flutter, enhancing the user interface and experience.",
+        "Created an automated search tool with Selenium in Python to improve data retrieval processes for customers.",
+        "Collaborated closely with cross-functional teams to enhance user experience, optimize application performance, and implement new features.",
+        "Maintained a strong emphasis on writing well-structured, clean code and conducting thorough testing to ensure software reliability.",
+        "Engaged in agile development practices, effectively managing various aspects of the software development lifecycle.",
+        "Delivered high-quality solutions that met both user and business needs."
+      ],
+      "tech": ["Node.js", "Spring Boot", "PostgreSQL", "Flutter", "Selenium"]
+    },
+    {
+      "company": "American International University - Bangladesh (AIUB)",
+      "role": "Teaching Assistant",
+      "period": "Feb 2021 - Apr 2021",
+      "location": "kuril, Dhaka, Bangladesh.",
+      "description": "Taught sessions, supported students, evaluated assessments, and maintained records; assisted with course materials.",
+      "highlights": [
+        "Taught the assigned curriculum in one-to-three-hour classroom sessions, ensuring clarity and engagement.",
+        "Answered student questions and provided additional support during and after class sessions.",
+        "Evaluated student assessments, including assignments, quizzes, and exams, and provided constructive feedback.",
+        "Maintained accurate records of student grades, attendance, and progress to monitor academic development.",
+        "Assisted in preparing course materials and supporting the lead instructor with administrative tasks."
+      ],
+      "tech": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "American International University-Bangladesh (AIUB)",
+      "degree": "BSc in CSE",
+      "period": "2017 – 2021",
+      "location": "408/1 (Old KA 66/1), Kuratoli, Khilkhet, Dhaka 1229, Bangladesh",
+      "gpa=off": "3.44/4.00",
+      "details": "Department: Computer Science and Engineering."
+    },
+    {
+      "institution": "Govt. Tolaram College",
+      "degree": "HSC (Science)",
+      "period": "2015 – 2016",
+      "location": "College Road Allama Iqbal Rd, Narayanganj 1400",
+      "gpa-off": "5.0/5.0",
+      "details": "Group: Science"
+    }
+  ],
+  "contact": [
+    { "type": "email", "value": "saqib.aminul29@gmail.com", "label": "Email" },
+    { "type": "phone", "value": "+8801821500050", "label": "Phone" },
+    { "type": "link", "value": "https://github.com/Saqib29", "label": "GitHub" },
+    { "type": "link", "value": "https://medium.com/@saqibaminul", "label": "Medium" },
+    { "type": "link", "value": "https://dev.to/saqib29", "label": "Dev.to" },
+    { "type": "link", "value": "https://saqib29.github.io/", "label": "Website" }
+  ]
+}
