@@ -27,7 +27,7 @@ Thumbs.db
 
 # Lockfiles (ignore if using pnpm and you want to avoid committing lockfile)
 # Uncomment if you don't want to commit pnpm lockfile
-pnpm-lock.yaml
+# pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
