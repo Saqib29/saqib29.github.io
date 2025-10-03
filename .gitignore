@@ -8,7 +8,13 @@ bower_components/
 .npm
 
 # Optional build output
+# Build / output directories (compiled assets)
 /dist
+/build
+/out
+
+# TypeScript build output (we compile src/ -> scripts/)
+/scripts
 
 # Logs
 npm-debug.log*
@@ -18,3 +24,30 @@ yarn-error.log*
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Lockfiles (ignore if using pnpm and you want to avoid committing lockfile)
+# Uncomment if you don't want to commit pnpm lockfile
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# caches
+.cache/
+.parcel-cache/
+
+# macOS
+.Spotlight-V100
+.Trashes
+
+
+README-ORGANIZATION.md
+README-PORTFOLIO.md
