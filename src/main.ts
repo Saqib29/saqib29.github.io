@@ -45,20 +45,6 @@ function iconForSocial(label?: string, href?: string): string {
   return iconLink();
 }
 
-function iconForContact(item: any): string {
-  const t = (item?.type || '').toLowerCase();
-  const label = (item?.label || '').toLowerCase();
-  const url = (item?.href || item?.value || '').toLowerCase();
-  if (t === 'email') return iconMail();
-  if (t === 'phone') return iconPhone();
-  if (t === 'github' || label.includes('github') || url.includes('github.com')) return iconGitHub();
-  if (t === 'devto' || label.includes('dev.to') || label.includes('devto') || url.includes('dev.to')) return iconDevto();
-  if (t === 'medium' || label.includes('medium') || url.includes('medium.com')) return iconMedium();
-  if (t === 'blog' || label.includes('blog') || url.includes('/blog') || url.includes('/rss')) return iconRss();
-  if (t === 'website' || t === 'site' || t === 'portfolio' || label.includes('website') || label.includes('site') || label.includes('portfolio')) return iconGlobe();
-  return iconLink();
-}
-
 function skillIconSVG(name?: string): string {
   const n = (name || '').toLowerCase();
   const svg = (p: string) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">${p}</svg>`;
@@ -302,7 +288,6 @@ function renderProjects(d: any) {
   const projects = d.projects || [];
   if (!grid) return;
   grid.innerHTML = projects.map((p: any) => {
-    const statusClass = p.status ? `status-${p.status.toLowerCase().replace(/\s+/g, '-')}` : 'status-completed';
     const hasLinks = Array.isArray(p.links) && p.links.length > 0;
     return `
     <article class="project-card">
@@ -392,62 +377,12 @@ function renderExperience(d: any) {
   `;
 }
 
-function renderEducation(d: any) {
-  const list = qs<HTMLElement>('#education-list');
-  if (!list) return;
-  const items = d.education || [];
-  list.innerHTML = items.map((e: any) => {
-    const details = e.details || '';
-    let department = e.department || '';
-    let deptLabel = '';
-    const prefixMatch = details.match(/^\s*(Department|Group)\s*:\s*(.*)$/i);
-    if (!department && prefixMatch) {
-      deptLabel = prefixMatch[1].charAt(0).toUpperCase() + prefixMatch[1].slice(1).toLowerCase();
-      department = (prefixMatch[2] || '').trim();
-    } else if (department) {
-      deptLabel = 'Department';
-    }
-    const showDetails = details && !/^\s*(Department|Group)\s*:/i.test(details);
-
-    return `
-    <article class="card">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <div class="flex items-start gap-3">
-            ${e.logo ? `<img class="edu-logo" src="${e.logo}" alt="${e.institution}" />` : ''}
-            <div>
-              ${e.institution ? `<div class="text-base md:text-lg font-medium">${e.institution}</div>` : ''}
-              ${e.location ? `<div class="text-xs text-gray-500">${e.location}</div>` : ''}
-              ${department ? `<div class="mt-1 text-sm">${deptLabel}: ${department}</div>` : ''}
-              ${e.degree ? `<div class="mt-2"><span class="badge">${e.degree}</span></div>` : ''}
-            </div>
-          </div>
-          <div class="text-right">
-            ${e.period ? `<div class="text-xs text-gray-500">${e.period}</div>` : ''}
-            ${e.gpa ? `<span class="badge">GPA ${e.gpa}</span>` : ''}
-          </div>
-        </div>
-        ${showDetails ? `<p class="mt-2 text-sm text-gray-600 dark:text-gray-300 clamp-3">${details}</p>` : ''}
-        ${Array.isArray(e.highlights) && e.highlights.length ? `<div class="mt-3 flex flex-wrap gap-2">${e.highlights.map((h: string) => `<span class=\"tag\">${h}</span>`).join('')}</div>` : ''}
-        ${e.link ? `<div class="mt-3"><a class="link" href="${e.link}" target="_blank" rel="noopener">View credential →</a></div>` : ''}
-      </div>
-    </article>`;
-  }).join('');
-}
-
 function renderContact(d: any) {
   const el = qs<HTMLElement>('#contact-content');
   if (!el) return;
   const ways = Array.isArray(d.contact) ? d.contact : [];
   const primaryEmail = (ways.find((w: any) => w.type === 'email')?.value) || '';
   const phone = ways.find((w: any) => w.type === 'phone');
-  const filtered = ways.filter((w: any) => {
-    const v = (w.href || w.value || '').toLowerCase();
-    if (v.includes('github.com')) return false;
-    if (v.includes('dev.to')) return false;
-    if (v.includes('medium.com')) return false;
-    return true;
-  });
   let location = d.profile?.location || '';
   if (!location && Array.isArray(d.experience) && d.experience.length) location = d.experience[0].location || '';
 

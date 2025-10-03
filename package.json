@@ -7,13 +7,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx -s tsc -p tsconfig.json",
     "build:watch": "npx -s tsc -p tsconfig.json --watch",
-    "start": "npx -s serve ."
+    "start": "npx -s serve .",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.16.1",
   "devDependencies": {
-    "typescript": "^5.5.2"
-  }
+    "typescript": "^5.5.2",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "eslint-plugin-import": "^2.29.0"
+  },
+  "private": true
 }

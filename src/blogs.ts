@@ -1,7 +1,6 @@
 // src/blogs.ts - TypeScript conversion of original blogs.js
 
 function qs<T extends Element = Element>(sel: string): T | null { return document.querySelector(sel) as T | null; }
-function qsa<T extends Element = Element>(sel: string): T[] { return Array.from(document.querySelectorAll(sel)) as T[]; }
 
 function icon(basePath: string): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="icon">${basePath}</svg>`;
@@ -104,3 +103,5 @@ async function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
+export {};
