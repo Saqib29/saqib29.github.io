@@ -1,62 +1,37 @@
-function iconMedium() {
-  // Single 'M' glyph, centered and sized to fit 24x24
-  // Strokes create two verticals with diagonals to form an M
+// src/main.ts - TypeScript conversion of original main.js
+
+export {};
+
+type Maybe<T> = T | null | undefined;
+
+function qs<T extends Element = Element>(sel: string): Maybe<T> { return document.querySelector(sel) as Maybe<T>; }
+function qsa<T extends Element = Element>(sel: string): T[] { return Array.from(document.querySelectorAll(sel)) as T[]; }
+
+function icon(basePath: string): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="icon">${basePath}</svg>`;
+}
+
+function iconMedium(): string {
   return icon(
     '<path d="M6 18V7"/>' +
     '<path d="M6 7l6 7 6-7"/>' +
     '<path d="M18 18V7"/>'
   );
 }
-// main.js - loads JSON content and renders the portfolio
 
-function qs(sel) { return document.querySelector(sel); }
-function qsa(sel) { return Array.from(document.querySelectorAll(sel)); }
+function iconGitHub() { return icon('<path d="M15 22v-3.13a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18.5 4.77 5.07 5.07 0 0 0 18.4 1S17.09.65 15 2.2a13.38 13.38 0 0 0-6 0C6.91.65 5.6 1 5.6 1a5.07 5.07 0 0 0-.1 3.77A5.44 5.44 0 0 0 3.5 9.26c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.87V22"/>'); }
+function iconLinkedIn() { return icon('<rect x="2" y="9" width="4" height="13" rx="1"/><circle cx="4" cy="4" r="2"/><path d="M9 22v-8a4 4 0 0 1 8 0v8"/>'); }
+function iconDevto() { return icon('<rect x="2" y="3" width="20" height="18" rx="2"/>' + '<path d="M6 9v6h1.6a2.6 2.6 0 0 0 0-6H6Z"/>' + '<path d="M11 9v6M13.5 9H11M13 12h-2M13.5 15H11"/>' + '<path d="M15 9l2 6 2-6"/>' ); }
+function iconLeetCode() { return icon('<path d="M13 4 7 10l6 6"/><path d="M17 7 12 12l5 5"/><path d="M14 19h5"/>'); }
+function iconStackOverflow() { return icon('<path d="M5 20h10v-5"/><path d="M7 18h6"/><path d="m8 14 6 2"/><path d="m9 11 6 3"/><path d="m10 8 6 4"/><path d="m11 5 6 5"/>'); }
+function iconMail() { return icon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'); }
+function iconPhone() { return icon('<path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.12.9.3 1.77.54 2.61a2 2 0 0 1-.45 2.11L7 8a16 16 0 0 0 6 6l.53-1.2a2 2 0 0 1 2.11-.45c.84.24 1.71.42 2.61.54A2 2 0 0 1 22 16.92Z"/>'); }
+function iconLink() { return icon('<path d="M10 13a5 5 0 0 0 7.07 0l1.76-1.76a5 5 0 0 0-7.07-7.07L10 5"/><path d="M14 11a5 5 0 0 0-7.07 0L5.17 12.76a5 5 0 0 0 7.07 7.07L14 19"/>'); }
+function iconGlobe() { return icon('<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/>'); }
+function iconRss() { return icon('<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>'); }
+function iconMapPin() { return icon('<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>'); }
 
-// SVG icon helpers (stroke-based for a consistent, clean look)
-function icon(basePath) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="icon">${basePath}</svg>`;
-}
-function iconGitHub() {
-  return icon('<path d="M15 22v-3.13a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 18.5 4.77 5.07 5.07 0 0 0 18.4 1S17.09.65 15 2.2a13.38 13.38 0 0 0-6 0C6.91.65 5.6 1 5.6 1a5.07 5.07 0 0 0-.1 3.77A5.44 5.44 0 0 0 3.5 9.26c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.87V22"/>');
-}
-function iconLinkedIn() {
-  return icon('<rect x="2" y="9" width="4" height="13" rx="1"/><circle cx="4" cy="4" r="2"/><path d="M9 22v-8a4 4 0 0 1 8 0v8"/>');
-}
-function iconDevto() {
-  // DEV logo: rounded rectangle with stylized D E V
-  return icon('<rect x="2" y="3" width="20" height="18" rx="2"/>'+
-    '<path d="M6 9v6h1.6a2.6 2.6 0 0 0 0-6H6Z"/>' + // D
-    '<path d="M11 9v6M13.5 9H11M13 12h-2M13.5 15H11"/>' + // E
-    '<path d="M15 9l2 6 2-6"/>' // V
-  );
-}
-// Simplified LeetCode glyph
-function iconLeetCode() {
-  return icon('<path d="M13 4 7 10l6 6"/><path d="M17 7 12 12l5 5"/><path d="M14 19h5"/>');
-}
-// Simplified Stack Overflow glyph
-function iconStackOverflow() {
-  return icon('<path d="M5 20h10v-5"/><path d="M7 18h6"/><path d="m8 14 6 2"/><path d="m9 11 6 3"/><path d="m10 8 6 4"/><path d="m11 5 6 5"/>');
-}
-function iconMail() {
-  return icon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>');
-}
-function iconPhone() {
-  return icon('<path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.12.9.3 1.77.54 2.61a2 2 0 0 1-.45 2.11L7 8a16 16 0 0 0 6 6l.53-1.2a2 2 0 0 1 2.11-.45c.84.24 1.71.42 2.61.54A2 2 0 0 1 22 16.92Z"/>');
-}
-function iconLink() {
-  return icon('<path d="M10 13a5 5 0 0 0 7.07 0l1.76-1.76a5 5 0 0 0-7.07-7.07L10 5"/><path d="M14 11a5 5 0 0 0-7.07 0L5.17 12.76a5 5 0 0 0 7.07 7.07L14 19"/>');
-}
-function iconGlobe() { // website
-  return icon('<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/>');
-}
-function iconRss() { // blog
-  return icon('<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>');
-}
-function iconMapPin() {
-  return icon('<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>');
-}
-function iconForSocial(label, href) {
+function iconForSocial(label?: string, href?: string): string {
   const l = (label || '').toLowerCase();
   const h = (href || '').toLowerCase();
   if (l.includes('github') || h.includes('github.com')) return iconGitHub();
@@ -69,39 +44,16 @@ function iconForSocial(label, href) {
   if (l.includes('website') || l.includes('site') || l.includes('portfolio') || h.includes('http')) return iconGlobe();
   return iconLink();
 }
-function iconForContact(item) {
-  const t = (item?.type || '').toLowerCase();
-  const label = (item?.label || '').toLowerCase();
-  const url = (item?.href || item?.value || '').toLowerCase();
-  if (t === 'email') return iconMail();
-  if (t === 'phone') return iconPhone();
-  // Infer platform
-  if (t === 'github' || label.includes('github') || url.includes('github.com')) return iconGitHub();
-  // Dev.to
-  if (t === 'devto' || label.includes('dev.to') || label.includes('devto') || url.includes('dev.to')) return iconDevto();
-  // Medium
-  if (t === 'medium' || label.includes('medium') || url.includes('medium.com')) return iconMedium();
-  // Blog/RSS
-  if (t === 'blog' || label.includes('blog') || url.includes('/blog') || url.includes('/rss')) return iconRss();
-  if (
-    t === 'website' || t === 'site' || t === 'portfolio' ||
-    label.includes('website') || label.includes('site') || label.includes('portfolio')
-  ) return iconGlobe();
-  return iconLink();
-}
 
-// Monochrome skill icons (minimal stroke-based)
-function skillIconSVG(name) {
+function skillIconSVG(name?: string): string {
   const n = (name || '').toLowerCase();
-  const svg = (p) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">${p}</svg>`;
-  // Generic icons
+  const svg = (p: string) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="skill-icon">${p}</svg>`;
   const code = svg('<path d="m9 18-6-6 6-6"/><path d="m15 6 6 6-6 6"/>');
   const box = svg('<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>');
   const db = svg('<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>');
   const cloud = svg('<path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.3 1.7A4 4 0 0 0 7 19Z"/>');
   const test = svg('<path d="M4 5h16"/><path d="M4 9h16"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 13v7"/>');
 
-  // Mappings by keyword
   if (n.includes('javascript') || n === 'js') return code;
   if (n.includes('typescript') || n === 'ts') return code;
   if (n.includes('html')) return svg('<path d="M6 2h12l-1 18-5 2-5-2L6 2Z"/><path d="M8 7h8M8 12h6M9 17h5"/>');
@@ -137,58 +89,59 @@ function skillIconSVG(name) {
   return code;
 }
 
-const state = {
-  data: null,
-};
+const state: { data: any | null } = { data: null };
 
-async function loadData() {
+async function loadData(): Promise<void> {
   const res = await fetch('./data/content.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Failed to load content.json');
   state.data = await res.json();
 }
 
-function setSEO(d) {
+function setSEO(d: any) {
   const title = d.site?.title || 'Portfolio';
   const desc = d.site?.description || '';
   const url = d.site?.url || '';
   const image = d.site?.image || '';
 
   document.title = title;
-  qs('#site-title').textContent = title;
-  qs('#site-description').setAttribute('content', desc);
-  qs('#og-title').setAttribute('content', title);
-  qs('#og-description').setAttribute('content', desc);
-  qs('#og-url').setAttribute('content', url);
-  if (image) qs('#og-image').setAttribute('content', image);
+  qs<HTMLSpanElement>('#site-title')!.textContent = title;
+  qs<HTMLMetaElement>('#site-description')!.setAttribute('content', desc);
+  qs<HTMLMetaElement>('#og-title')!.setAttribute('content', title);
+  qs<HTMLMetaElement>('#og-description')!.setAttribute('content', desc);
+  qs<HTMLMetaElement>('#og-url')!.setAttribute('content', url);
+  if (image) qs<HTMLMetaElement>('#og-image')!.setAttribute('content', image);
 }
 
 function setupDarkMode() {
   const saved = localStorage.getItem('theme');
   const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.classList.toggle('dark', isDark);
-  const btn = qs('#dark-toggle');
-  btn.textContent = isDark ? '☀️' : '🌙';
-  btn.addEventListener('click', () => {
-    const newDark = !document.documentElement.classList.contains('dark');
-    document.documentElement.classList.toggle('dark', newDark);
-    localStorage.setItem('theme', newDark ? 'dark' : 'light');
-    btn.textContent = newDark ? '☀️' : '🌙';
-  });
+  const btn = qs<HTMLButtonElement>('#dark-toggle');
+  if (btn) {
+    btn.textContent = isDark ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+      const newDark = !document.documentElement.classList.contains('dark');
+      document.documentElement.classList.toggle('dark', newDark);
+      localStorage.setItem('theme', newDark ? 'dark' : 'light');
+      btn.textContent = newDark ? '☀️' : '🌙';
+    });
+  }
 }
 
-function buildNav(sections) {
-  const nav = qs('#nav-links');
+function buildNav(sections: Array<{id?: string; label: string; href?: string}>) {
+  const nav = qs<HTMLElement>('#nav-links');
+  if (!nav) return;
   nav.innerHTML = sections.map(s => {
     const href = s.href || `#${s.id}`;
     return `<a class="nav-link" href="${href}">${s.label}</a>`;
   }).join('');
 }
 
-function renderHero(d) {
-  qs('#nav-brand').textContent = d.profile?.name || 'My Portfolio';
-  qs('#hero-title').textContent = d.hero?.title || '';
-  qs('#hero-subtitle').textContent = d.hero?.subtitle || '';
-  const img = qs('#hero-image');
+function renderHero(d: any) {
+  qs<HTMLDivElement>('#nav-brand')!.textContent = d.profile?.name || 'My Portfolio';
+  qs<HTMLHeadingElement>('#hero-title')!.textContent = d.hero?.title || '';
+  qs<HTMLParagraphElement>('#hero-subtitle')!.textContent = d.hero?.subtitle || '';
+  const img = qs<HTMLImageElement>('#hero-image')!;
   if (d.hero?.image) {
     img.src = d.hero.image;
     img.alt = d.profile?.name || 'Portrait';
@@ -196,26 +149,24 @@ function renderHero(d) {
     img.style.display = 'none';
   }
 
-  // CTAs
-  const ctas = qs('#hero-ctas');
-  ctas.innerHTML = (d.hero?.ctas || []).map(b => {
+  const ctas = qs<HTMLElement>('#hero-ctas')!;
+  ctas.innerHTML = (d.hero?.ctas || []).map((b: any) => {
     const style = b.primary ? 'bg-primary text-white hover:bg-primary-dark' : 'border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800';
     return `<a class="px-4 py-2 rounded-md ${style}" href="${b.href}" target="${b.external ? '_blank' : '_self'}" rel="noopener">${b.label}</a>`;
   }).join('');
 
-  // Social
-  const socials = qs('#social-links');
+  const socials = qs<HTMLElement>('#social-links')!;
   const baseSocials = Array.isArray(d.socials) ? [...d.socials] : [];
   const contact = Array.isArray(d.contact) ? d.contact : [];
-  const additions = [];
+  const additions: any[] = [];
   const platforms = [
-    { key: 'Medium', match: (u='') => u.includes('medium.com') },
-    { key: 'Dev.to', match: (u='') => u.includes('dev.to') },
-    { key: 'LeetCode', match: (u='') => u.includes('leetcode.com') },
-    { key: 'Stack Overflow', match: (u='') => u.includes('stackoverflow.com') },
+    { key: 'Medium', match: (u = '') => u.includes('medium.com') },
+    { key: 'Dev.to', match: (u = '') => u.includes('dev.to') },
+    { key: 'LeetCode', match: (u = '') => u.includes('leetcode.com') },
+    { key: 'Stack Overflow', match: (u = '') => u.includes('stackoverflow.com') },
   ];
-  const existing = new Set(baseSocials.map(s => (s.href || s.label || '').toLowerCase()));
-  contact.forEach(c => {
+  const existing = new Set(baseSocials.map((s: any) => (s.href || s.label || '').toLowerCase()));
+  contact.forEach((c: any) => {
     const href = (c.href || c.value || '').toLowerCase();
     if (!href) return;
     platforms.forEach(p => {
@@ -229,10 +180,9 @@ function renderHero(d) {
     });
   });
   const merged = [...baseSocials, ...additions];
-  socials.innerHTML = merged.map(s => `<a class="icon-btn" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${iconForSocial(s.label, s.href)}</a>`).join('');
+  socials.innerHTML = merged.map((s: any) => `<a class="icon-btn" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${iconForSocial(s.label, s.href)}</a>`).join('');
 
-  // Resume
-  const resume = qs('#resume-link');
+  const resume = qs<HTMLAnchorElement>('#resume-link')!;
   if (d.profile?.resume) {
     resume.href = d.profile.resume;
   } else {
@@ -240,20 +190,18 @@ function renderHero(d) {
   }
 }
 
-function renderAbout(d) {
-  const about = qs('#about-content');
+function renderAbout(d: any) {
+  const about = qs<HTMLElement>('#about-content')!;
   about.innerHTML = (d.about?.html) || '';
 }
 
-// Inline icons for About cards
 function iconCode() { return icon('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>'); }
 function iconBriefcase() { return icon('<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect>'); }
 function iconGraduation() { return icon('<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>'); }
 
-function renderAboutCards(d) {
-  const wrap = qs('#about-cards');
+function renderAboutCards(d: any) {
+  const wrap = qs<HTMLElement>('#about-cards');
   if (!wrap) return;
-  // Prepare summaries
   const years = '3+ years';
   const exp = Array.isArray(d.experience) ? d.experience : [];
   const current = exp[0];
@@ -289,66 +237,58 @@ function renderAboutCards(d) {
   `;
 }
 
-function renderSkills(d) {
+function renderSkills(d: any) {
   const skills = d.skills || {};
-
-  // Backward compatibility if skills is a flat array
   if (Array.isArray(skills)) {
-    const list = qs('#skills-list');
-    const filters = qs('#skills-filters');
+    const list = qs<HTMLElement>('#skills-list');
+    const filters = qs<HTMLElement>('#skills-filters');
     if (filters) filters.innerHTML = '';
     if (list) list.innerHTML = skills.map(s => `<span class="skill-tag">${skillIconSVG(s)}<span class="skill-name">${s}</span></span>`).join('');
     return;
   }
 
-  const filtersEl = qs('#skills-filters');
-  const listEl = qs('#skills-list');
+  const filtersEl = qs<HTMLElement>('#skills-filters');
+  const listEl = qs<HTMLElement>('#skills-list');
   if (!filtersEl || !listEl) return;
 
   const categories = Object.keys(skills);
-
-  // Build filters
   const allLabel = 'All';
   filtersEl.innerHTML = [allLabel, ...categories].map((cat, idx) => `
     <button class="filter-btn ${idx === 0 ? 'active' : ''}" data-cat="${cat}">${cat}</button>
   `).join('');
 
-  function renderList(filter) {
-    let items = [];
+  function renderList(filter: string) {
+    let items: string[] = [];
     if (!filter || filter === allLabel) {
-      // Flatten all skills (unique)
-      const set = new Set();
-      categories.forEach(c => (skills[c] || []).forEach(s => set.add(s)));
+      const set = new Set<string>();
+      categories.forEach(c => (skills[c] || []).forEach((s: string) => set.add(s)));
       items = Array.from(set);
     } else {
       items = skills[filter] || [];
     }
-    listEl.innerHTML = items.map(s => `<span class="skill-tag">${skillIconSVG(s)}<span class="skill-name">${s}</span></span>`).join('');
+    if (listEl) {
+      listEl.innerHTML = items.map(s => `<span class="skill-tag">${skillIconSVG(s)}<span class="skill-name">${s}</span></span>`).join('');
+    }
   }
 
-  // Initial render: show all
   renderList(allLabel);
 
-  // Click handlers
   filtersEl.addEventListener('click', (e) => {
-    const btn = e.target.closest('button.filter-btn');
+    const btn = (e.target as HTMLElement).closest('button.filter-btn') as HTMLElement | null;
     if (!btn) return;
-    const cat = btn.getAttribute('data-cat');
-    // Toggle active state
+    const cat = btn.getAttribute('data-cat') || '';
     qsa('#skills-filters .filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderList(cat);
   });
 }
 
-function renderProjects(d) {
-  const grid = qs('#projects-grid');
+function renderProjects(d: any) {
+  const grid = qs<HTMLElement>('#projects-grid');
   const projects = d.projects || [];
-  
-  grid.innerHTML = projects.map(p => {
-    const statusClass = p.status ? `status-${p.status.toLowerCase().replace(/\s+/g, '-')}` : 'status-completed';
+  if (!grid) return;
+  grid.innerHTML = projects.map((p: any) => {
     const hasLinks = Array.isArray(p.links) && p.links.length > 0;
-    
     return `
     <article class="project-card">
       <div class="project-header">
@@ -356,23 +296,20 @@ function renderProjects(d) {
         <h3 class="project-title">${p.title}</h3>
         ${p.description ? `<p class="project-subtitle">${p.description}</p>` : ''}
       </div>
-      
       <div class="project-body">
         ${Array.isArray(p.responsibilities) && p.responsibilities.length ? `
           <div class="project-responsibilities">
-            ${p.responsibilities.slice(0, 4).map(resp => `<div class="responsibility-item">${resp}</div>`).join('')}
+            ${p.responsibilities.slice(0, 4).map((resp: string) => `<div class="responsibility-item">${resp}</div>`).join('')}
           </div>
         ` : ''}
-        
         ${Array.isArray(p.tags) && p.tags.length ? `
           <div class="project-tech-stack">
-            ${p.tags.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            ${p.tags.map((tech: string) => `<span class="tech-tag">${tech}</span>`).join('')}
           </div>
         ` : ''}
-        
         ${hasLinks ? `
           <div class="project-links">
-            ${p.links.map((link, index) => `
+            ${p.links.map((link: any, index: number) => `
               <a href="${link.href}" 
                  target="_blank" 
                  rel="noopener" 
@@ -394,14 +331,14 @@ function renderProjects(d) {
   }).join('');
 }
 
-function renderExperience(d) {
-  const container = qs('#experience .container');
+function renderExperience(d: any) {
+  const container = qs<HTMLElement>('#experience .container');
+  if (!container) return;
   const experiences = d.experience || [];
-  
   container.innerHTML = `
     <h2 class="section-title">Experience</h2>
     <div class="experience-timeline">
-      ${experiences.map(exp => `
+      ${experiences.map((exp: any) => `
         <div class="experience-item">
           <div class="experience-marker"></div>
           <div class="experience-card">
@@ -409,10 +346,7 @@ function renderExperience(d) {
               <div class="experience-title-group">
                 <h3 class="experience-role">${exp.role}</h3>
                 <div class="experience-company">
-                  ${exp.companyUrl ? 
-                    `<a href="${exp.companyUrl}" target="_blank" rel="noopener" class="company-link">${exp.company}</a>` : 
-                    exp.company
-                  }
+                  ${exp.companyUrl ? `<a href="${exp.companyUrl}" target="_blank" rel="noopener" class="company-link">${exp.company}</a>` : exp.company}
                 </div>
               </div>
               <div class="experience-meta">
@@ -420,21 +354,18 @@ function renderExperience(d) {
                 <div class="experience-location">${exp.location}</div>
               </div>
             </div>
-            
             <div class="experience-description">${exp.description}</div>
-            
             ${exp.highlights && exp.highlights.length ? `
               <div class="experience-highlights">
                 <h4 class="highlights-title">Key Achievements</h4>
-                ${exp.highlights.map(highlight => `
+                ${exp.highlights.map((highlight: string) => `
                   <div class="highlight-item">${highlight}</div>
                 `).join('')}
               </div>
             ` : ''}
-            
             ${exp.tech && exp.tech.length ? `
               <div class="experience-tech">
-                ${exp.tech.map(tech => `
+                ${exp.tech.map((tech: string) => `
                   <span class="experience-tech-tag">${tech}</span>
                 `).join('')}
               </div>
@@ -446,69 +377,16 @@ function renderExperience(d) {
   `;
 }
 
-function renderEducation(d) {
-  const list = qs('#education-list');
-  const items = d.education || [];
-  list.innerHTML = items.map(e => {
-    // Derive department/group from explicit field or details prefix
-    const details = e.details || '';
-    let department = e.department || '';
-    let deptLabel = '';
-    const prefixMatch = details.match(/^\s*(Department|Group)\s*:\s*(.*)$/i);
-    if (!department && prefixMatch) {
-      deptLabel = prefixMatch[1].charAt(0).toUpperCase() + prefixMatch[1].slice(1).toLowerCase();
-      department = (prefixMatch[2] || '').trim();
-    } else if (department) {
-      deptLabel = 'Department';
-    }
-    // Keep the remaining details if it wasn't just department
-    const showDetails = details && !/^\s*(Department|Group)\s*:/i.test(details);
-
-    return `
-    <article class="card">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-3">
-          <div class="flex items-start gap-3">
-            ${e.logo ? `<img class="edu-logo" src="${e.logo}" alt="${e.institution}" />` : ''}
-            <div>
-              ${e.institution ? `<div class="text-base md:text-lg font-medium">${e.institution}</div>` : ''}
-              ${e.location ? `<div class="text-xs text-gray-500">${e.location}</div>` : ''}
-              ${department ? `<div class="mt-1 text-sm">${deptLabel}: ${department}</div>` : ''}
-              ${e.degree ? `<div class="mt-2"><span class="badge">${e.degree}</span></div>` : ''}
-            </div>
-          </div>
-          <div class="text-right">
-            ${e.period ? `<div class="text-xs text-gray-500">${e.period}</div>` : ''}
-            ${e.gpa ? `<span class="badge">GPA ${e.gpa}</span>` : ''}
-          </div>
-        </div>
-        ${showDetails ? `<p class="mt-2 text-sm text-gray-600 dark:text-gray-300 clamp-3">${details}</p>` : ''}
-        ${Array.isArray(e.highlights) && e.highlights.length ? `<div class="mt-3 flex flex-wrap gap-2">${e.highlights.map(h => `<span class=\"tag\">${h}</span>`).join('')}</div>` : ''}
-        ${e.link ? `<div class="mt-3"><a class="link" href="${e.link}" target="_blank" rel="noopener">View credential →</a></div>` : ''}
-      </div>
-    </article>`;
-  }).join('');
-}
-
-function renderContact(d) {
-  const el = qs('#contact-content');
+function renderContact(d: any) {
+  const el = qs<HTMLElement>('#contact-content');
+  if (!el) return;
   const ways = Array.isArray(d.contact) ? d.contact : [];
-  const primaryEmail = (ways.find(w => w.type === 'email')?.value) || '';
-  const phone = ways.find(w => w.type === 'phone');
-  // Remove GitHub, Medium, Dev.to from Contact
-  const filtered = ways.filter(w => {
-    const v = (w.href || w.value || '').toLowerCase();
-    if (v.includes('github.com')) return false;
-    if (v.includes('dev.to')) return false;
-    if (v.includes('medium.com')) return false;
-    return true;
-  });
-  // Derive location (prefer profile.location if exists; else first experience.location)
+  const primaryEmail = (ways.find((w: any) => w.type === 'email')?.value) || '';
+  const phone = ways.find((w: any) => w.type === 'phone');
   let location = d.profile?.location || '';
   if (!location && Array.isArray(d.experience) && d.experience.length) location = d.experience[0].location || '';
 
-  // Build inline info items (left) and form (right)
-  const inlineItems = [];
+  const inlineItems: string[] = [];
   if (phone) {
     inlineItems.push(`
       <a class="contact-item" href="tel:${phone.value}">
@@ -571,16 +449,14 @@ function renderContact(d) {
     </div>
   `;
 
-  // Add mailto submission handler
-  const form = qs('#contact-form');
+  const form = qs<HTMLFormElement>('#contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = /** @type {HTMLInputElement} */(qs('#cf-name')).value.trim();
-      const email = /** @type {HTMLInputElement} */(qs('#cf-email')).value.trim();
-      const subject = /** @type {HTMLInputElement} */(qs('#cf-subject')).value.trim();
-      const message = /** @type {HTMLTextAreaElement} */(qs('#cf-message')).value.trim();
-      const to = primaryEmail || '';
+      const name = (qs<HTMLInputElement>('#cf-name') as HTMLInputElement).value.trim();
+      const email = (qs<HTMLInputElement>('#cf-email') as HTMLInputElement).value.trim();
+      const subject = (qs<HTMLInputElement>('#cf-subject') as HTMLInputElement).value.trim();
+      const message = (qs<HTMLTextAreaElement>('#cf-message') as HTMLTextAreaElement).value.trim();
       const body = `From: ${name} <${email}>\n\n${message}`;
       const mailto = `mailto:${encodeURIComponent(primaryEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
@@ -588,35 +464,28 @@ function renderContact(d) {
   }
 }
 
-function renderFooter(d) {
-  qs('#year').textContent = new Date().getFullYear();
-  qs('#site-owner').textContent = d.profile?.name || '';
+function renderFooter(d: any) {
+  qs<HTMLElement>('#year')!.textContent = String(new Date().getFullYear());
+  qs<HTMLElement>('#site-owner')!.textContent = d.profile?.name || '';
 }
 
-// Scroll reveal animations
 function setupReveal() {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = [
-    ...qsa('section.section > .container'),
-    ...qsa('.card'),
-    ...qsa('.timeline-card')
+    ...qsa<HTMLElement>('section.section > .container'),
+    ...qsa<HTMLElement>('.card'),
+    ...qsa<HTMLElement>('.timeline-card')
   ];
-  
-  // Add section titles and dividers to animation targets
-  const sectionTitles = qsa('.section-title');
-  const sectionDividers = qsa('.section-divider');
-  
+  const sectionTitles = qsa<HTMLElement>('.section-title');
+  const sectionDividers = qsa<HTMLElement>('.section-divider');
   if (!targets.length) return;
-  
   if (reduce) {
     targets.forEach(el => el.classList.add('is-visible'));
     sectionTitles.forEach(el => el.classList.add('animate-underline'));
     sectionDividers.forEach(el => el.classList.add('animate'));
     return;
   }
-  
   targets.forEach(el => el.classList.add('reveal'));
-  
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -625,32 +494,14 @@ function setupReveal() {
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  
-  // Observer for section titles
-  const titleObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-underline');
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  // Observer for section dividers
-  const dividerObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  }, { threshold: 0.3 });
-  
+  const titleObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate-underline'); }); }, { threshold: 0.5 });
+  const dividerObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('animate'); }); }, { threshold: 0.3 });
   targets.forEach(t => io.observe(t));
   sectionTitles.forEach(t => titleObserver.observe(t));
   sectionDividers.forEach(d => dividerObserver.observe(d));
 }
 
 function buildAutoNav() {
-  // Add nav links for each major section if not provided in JSON
   const sections = [
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
@@ -662,11 +513,11 @@ function buildAutoNav() {
   buildNav(sections);
 }
 
-function renderBlogs(d) {
-  const list = qs('#blogs-list');
-  if (!list) return; // section may be removed
+function renderBlogs(d: any) {
+  const list = qs<HTMLElement>('#blogs-list');
+  if (!list) return;
   const blogs = d.blogs || [];
-  list.innerHTML = blogs.map(b => `
+  list.innerHTML = blogs.map((b: any) => `
     <article class="card h-full flex flex-col">
       ${b.image ? `<img src="${b.image}" alt="${b.title}" class="w-full h-40 object-cover" />` : ''}
       <div class="card-body flex-1 flex flex-col">
@@ -701,48 +552,34 @@ async function init() {
     setupReveal();
     initTimelineAnimation();
   } catch (err) {
+     
     console.error(err);
     alert('Failed to load portfolio data. Please check data/content.json');
   }
 }
 
-// Scroll-triggered timeline animation
 function initTimelineAnimation() {
-  const timeline = qs('.experience-timeline');
+  const timeline = qs<HTMLElement>('.experience-timeline');
   if (!timeline) return;
-
-  // Progressive line drawing based on scroll position
+  const timelineEl = timeline as HTMLElement;
   function updateTimelineProgress() {
-    const timelineRect = timeline.getBoundingClientRect();
+    const timelineRect = timelineEl.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    
-    // Calculate how much of the timeline is visible
     const timelineTop = timelineRect.top;
     const timelineHeight = timelineRect.height;
-    
-    // Start animation when timeline enters viewport
     if (timelineTop < windowHeight && timelineTop + timelineHeight > 0) {
-      // Calculate progress based on scroll position
       let scrollProgress = 0;
-      
       if (timelineTop <= windowHeight * 0.8) {
-        // Timeline is in view, calculate how much should be drawn
         const visibleAmount = Math.min(windowHeight - timelineTop, timelineHeight);
         scrollProgress = Math.max(0, Math.min(1, visibleAmount / timelineHeight));
       }
-      
-      // Apply the progress to the timeline line
-      timeline.style.setProperty('--timeline-progress', scrollProgress);
+  timelineEl.style.setProperty('--timeline-progress', String(scrollProgress));
     } else if (timelineTop > windowHeight) {
-      // Timeline is below viewport
-      timeline.style.setProperty('--timeline-progress', 0);
+  timelineEl.style.setProperty('--timeline-progress', '0');
     } else {
-      // Timeline is above viewport
-      timeline.style.setProperty('--timeline-progress', 1);
+  timelineEl.style.setProperty('--timeline-progress', '1');
     }
   }
-
-  // Throttled scroll handler
   let ticking = false;
   function handleScroll() {
     if (!ticking) {
@@ -753,9 +590,7 @@ function initTimelineAnimation() {
       ticking = true;
     }
   }
-
   window.addEventListener('scroll', handleScroll);
-  // Initial call
   updateTimelineProgress();
 }
 
