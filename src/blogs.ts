@@ -96,7 +96,7 @@ async function init() {
     profileButtons(d);
     renderBlogs(d);
   } catch (err) {
-    // eslint-disable-next-line no-console
+     
     console.error(err);
     alert('Failed to load blogs. Please check data/content.json');
   }

@@ -552,7 +552,7 @@ async function init() {
     setupReveal();
     initTimelineAnimation();
   } catch (err) {
-    // eslint-disable-next-line no-console
+     
     console.error(err);
     alert('Failed to load portfolio data. Please check data/content.json');
   }
