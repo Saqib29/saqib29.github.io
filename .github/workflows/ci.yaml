@@ -6,10 +6,6 @@ on:
       - "*"
   pull_request:
 
-  workflow_run:
-    workflows: ["CI Pipeline"]
-    types:
-      - completed
 
 jobs:
   build:

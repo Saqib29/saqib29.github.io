@@ -3,7 +3,12 @@ name: Deploy to Vercel
 on:
   pull_request:
     branches:
-      - vercel   # only trigger for PRs targeting 'vercel' branch
+      - vercel
+
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+    - completed
 
 jobs:
   deploy:
