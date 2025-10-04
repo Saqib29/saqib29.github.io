@@ -8,6 +8,7 @@
     "build": "npx -s tsc -p tsconfig.json",
     "build:watch": "npx -s tsc -p tsconfig.json --watch",
     "start": "npx -s serve .",
+    "dev": "pnpm build && pnpm start",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix"
   },
