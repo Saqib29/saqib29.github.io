@@ -2,12 +2,12 @@
   "site": {
     "title": "Aminul Islam Saqib – Portfolio",
     "description": "Software Engineer, passionate programmer with 3+ years on Node.js and back-end frameworks; experienced across SaaS, microservices, EdTech, and MedTech.",
-    "url": "https://saqib29.github.io/",
+    "url": "https://aminulislamsaqib.vercel.app",
     "image": ""
   },
   "profile": {
     "name": "Aminul Islam Saqib",
-    "resume": "https://drive.google.com/file/d/1zfnH1i8BJciigwBD3Wogr9nNi8LIVbZy/view?usp=sharing"
+    "resume": "https://drive.google.com/file/d/1TJpVwOFIMsQO0EaYqAwhxCcwFUpNU61W/view?usp=sharing"
   },
   "hero": {
     "title": "Hi, I'm Aminul Islam Saqib",
@@ -56,7 +56,7 @@
 
   ],
   "about": {
-    "html": "<p>I am a professional Software Engineer, passionate programmer, and tech enthusiast with over 3 years of experience in software development, specializing in the Node.js platform. I am also proficient in other backend frameworks like Spring Boot, .NET, Laravel, Django, and Flask. I have experience working on diverse projects, including SaaS, microservices, EdTech, and MedTech domains.</p><p>I focus on writing clean, testable, and reusable code that adheres to SOLID principles and utilizes best design patterns and architectures to optimize applications for maximum performance in an Agile environment. I thrive on facing challenges and exploring emerging technologies.</p>"
+    "html": "<p>Hi, I'm Aminul Islam Saqib, a backend developer passionate about building reliable, scalable, and AI-ready systems. I've worked on projects ranging from CRM platforms and customer support SaaS to EdTech systems and microservice-based applications.</p><p>With experience in Node.js, NestJS, Spring Boot, PostgreSQL, MongoDB, Redis, Docker, and AWS, I specialize in designing APIs and infrastructures that can support AI/ML workflows — whether it's data aggregation, real-time event processing, or integrating intelligent services.</p><p>I'm especially excited about the future of AI-driven automation and how backend systems can power smarter, more adaptive applications.</p>"
   },
   "skills": {
     "Frontend": ["JavaScript", "TypeScript", "HTML5", "CSS3", "TailwindCSS", "Flutter"],
