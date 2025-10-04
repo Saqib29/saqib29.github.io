@@ -29,9 +29,20 @@ function setupDarkMode() {
   }
 }
 
+function setupMobileMenu() {
+    const toggleBtn = qs<HTMLButtonElement>('#mobile-menu-toggle');
+    const mobileMenu = qs<HTMLElement>('#mobile-menu');
+    if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+}
+
 function buildNav() {
   const nav = qs<HTMLElement>('#nav-links');
-  if (!nav) return;
+  const mobileNav = qs<HTMLElement>('#mobile-nav-links');
+  if (!nav || !mobileNav) return;
   const links = [
     { label: 'About', href: 'index.html#about' },
     { label: 'Skills', href: 'index.html#skills' },
@@ -40,15 +51,22 @@ function buildNav() {
     { label: 'Blogs', href: 'blogs.html' },
     { label: 'Contact', href: 'index.html#contact' },
   ];
-  nav.innerHTML = links.map(l => `<a class="nav-link" href="${l.href}">${l.label}</a>`).join('');
+  const linkHTML = links.map(l => `<a class="nav-link" href="${l.href}">${l.label}</a>`).join('');
+  nav.innerHTML = linkHTML;
+  mobileNav.innerHTML = linkHTML;
 }
 
 function renderHeaderFooter(d: any) {
   const brand = qs<HTMLElement>('#nav-brand');
   if (brand) brand.textContent = d.profile?.name || 'My Portfolio';
-  const resume = qs<HTMLAnchorElement>('#resume-link');
-  if (resume) {
-    if (d.profile?.resume) resume.href = d.profile.resume; else resume.style.display = 'none';
+  const resumeDesktop = qs<HTMLAnchorElement>('#resume-link-desktop');
+  const resumeMobile = qs<HTMLAnchorElement>('#resume-link-mobile');
+  if (d.profile?.resume) {
+    if(resumeDesktop) resumeDesktop.href = d.profile.resume;
+    if(resumeMobile) resumeMobile.href = d.profile.resume;
+  } else {
+    if(resumeDesktop) resumeDesktop.style.display = 'none';
+    if(resumeMobile) resumeMobile.style.display = 'none';
   }
   const year = qs<HTMLElement>('#year'); if (year) year.textContent = String(new Date().getFullYear());
   const owner = qs<HTMLElement>('#site-owner'); if (owner) owner.textContent = d.profile?.name || '';
@@ -90,6 +108,7 @@ function renderBlogs(d: any) {
 async function init() {
   try {
     setupDarkMode();
+    setupMobileMenu();
     buildNav();
     const d = await loadData();
     renderHeaderFooter(d);

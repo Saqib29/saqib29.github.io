@@ -128,13 +128,28 @@ function setupDarkMode() {
   }
 }
 
+function setupMobileMenu() {
+    const toggleBtn = qs<HTMLButtonElement>('#mobile-menu-toggle');
+    const mobileMenu = qs<HTMLElement>('#mobile-menu');
+    if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+}
+
 function buildNav(sections: Array<{id?: string; label: string; href?: string}>) {
   const nav = qs<HTMLElement>('#nav-links');
-  if (!nav) return;
-  nav.innerHTML = sections.map(s => {
+  const mobileNav = qs<HTMLElement>('#mobile-nav-links');
+  if (!nav || !mobileNav) return;
+  
+  const linkHTML = sections.map(s => {
     const href = s.href || `#${s.id}`;
     return `<a class="nav-link" href="${href}">${s.label}</a>`;
   }).join('');
+
+  nav.innerHTML = linkHTML;
+  mobileNav.innerHTML = linkHTML;
 }
 
 function renderHero(d: any) {
@@ -182,11 +197,14 @@ function renderHero(d: any) {
   const merged = [...baseSocials, ...additions];
   socials.innerHTML = merged.map((s: any) => `<a class="icon-btn" href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}">${iconForSocial(s.label, s.href)}</a>`).join('');
 
-  const resume = qs<HTMLAnchorElement>('#resume-link')!;
+  const resumeDesktop = qs<HTMLAnchorElement>('#resume-link-desktop');
+  const resumeMobile = qs<HTMLAnchorElement>('#resume-link-mobile');
   if (d.profile?.resume) {
-    resume.href = d.profile.resume;
+    if(resumeDesktop) resumeDesktop.href = d.profile.resume;
+    if(resumeMobile) resumeMobile.href = d.profile.resume;
   } else {
-    resume.style.display = 'none';
+    if(resumeDesktop) resumeDesktop.style.display = 'none';
+    if(resumeMobile) resumeMobile.style.display = 'none';
   }
 }
 
@@ -536,6 +554,7 @@ function renderBlogs(d: any) {
 async function init() {
   try {
     setupDarkMode();
+    setupMobileMenu();
     await loadData();
     const d = state.data;
     setSEO(d);
