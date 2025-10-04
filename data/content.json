@@ -11,7 +11,7 @@
   },
   "hero": {
     "title": "Hi, I'm Aminul Islam Saqib",
-    "subtitle": "Software Engineer – Backend specialist. I build clean, testable, scalable backends and APIs.",
+    "subtitle": "Software Engineer | Node.js, AWS, Microservices & AI‑Enabled Solutions.",
     "image": "../assets/images/saqib_image.png",
     "ctas": [
       { "label": "Get in touch", "href": "#contact", "primary": true },
