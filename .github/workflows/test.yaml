@@ -1,11 +1,9 @@
 name: CI Pipeline
 
 on:
-  push:
-    branches:
-      - "*"
   pull_request:
-
+     branches:
+      - "vercel"
 
 jobs:
   build:
