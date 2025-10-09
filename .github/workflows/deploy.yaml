@@ -1,35 +1,32 @@
-name: Deploy to Vercel
+ name: Deploy to Vercel
 
-on:
-  push:
-    branches:
-      - vercel
+ on:
+   pull_request_target:
+     types: [closed]
+     branches:
+       - vercel
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+ jobs:
+   deploy:
+     if: github.event.pull_request.merged == true
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
 
-      - name: Get PR number
-        id: get_pr_number
-        run: |
-          echo "PR_NUMBER=$(echo "${{ github.event.head_commit.message }}" | grep -oE '#[0-9]+' | sed 's/#//')" >> $GITHUB_OUTPUT
+       - name: Download artifact
+         uses: dawidd6/action-download-artifact@v6
+         with:
+           workflow: test.yaml
+           pr: ${{ github.event.number }}
+           name: portfolio-dist
+           path: dist/
 
-      - name: Download artifact
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          workflow: ci.yaml
-          pr: ${{ steps.get_pr_number.outputs.PR_NUMBER }}
-          name: portfolio-dist
-          path: dist/
-
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./dist
-          vercel-args: '--prod'
+       - name: Deploy to Vercel
+         uses: amondnet/vercel-action@v25
+         with:
+           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+           working-directory: ./dist
+           vercel-args: '--prod'
