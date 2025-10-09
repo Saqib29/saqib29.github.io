@@ -99,6 +99,16 @@
     "DevOps & Tools": ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
     "Testing & Automation": ["Jest", "Unit Testing", "Cheerio", "Selenium"]
   },
+  "homeProjectTags": [
+    "Node.js",
+    "NestJS",
+    "PostgreSQL",
+    "AWS",
+    "Microservices",
+    "Redis",
+    "GraphQL",
+    "Docker"
+  ],
   "projects": [
     {
       "title": "GainIO",

@@ -1,11 +1,6 @@
-// src/blogs.ts - TypeScript conversion of original blogs.js
+// src/projects.ts - Projects page renderer
 
 function qs<T extends Element = Element>(sel: string): T | null { return document.querySelector(sel) as T | null; }
-
-function icon(basePath: string): string {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="icon">${basePath}</svg>`;
-}
-function iconLink() { return icon('<path d="M10 13a5 5 0 0 0 7.07 0l1.76-1.76a5 5 0 0 0-7.07-7.07L10 5"/><path d="M14 11a5 5 0 0 0-7.07 0L5.17 12.76a5 5 0 0 0 7.07 7.07L14 19"/>'); }
 
 async function loadData(): Promise<any> {
   const res = await fetch('./data/content.json', { cache: 'no-store' });
@@ -30,13 +25,13 @@ function setupDarkMode() {
 }
 
 function setupMobileMenu() {
-    const toggleBtn = qs<HTMLButtonElement>('#mobile-menu-toggle');
-    const mobileMenu = qs<HTMLElement>('#mobile-menu');
-    if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
+  const toggleBtn = qs<HTMLButtonElement>('#mobile-menu-toggle');
+  const mobileMenu = qs<HTMLElement>('#mobile-menu');
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
 }
 
 function buildNav() {
@@ -72,37 +67,46 @@ function renderHeaderFooter(d: any) {
   const owner = qs<HTMLElement>('#site-owner'); if (owner) owner.textContent = d.profile?.name || '';
 }
 
-function profileButtons(d: any) {
-  const el = qs<HTMLElement>('#profile-buttons');
-  if (!el) return;
-  const socials = d.socials || [];
-  const dev = socials.find((s: any) => /dev\.to/i.test(s.href) || /dev/i.test(s.label || ''));
-  const medium = socials.find((s: any) => /medium\.com/i.test(s.href) || /medium/i.test(s.label || ''));
-  const btn = (label: string, href: string) => `<a class="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 inline-flex items-center gap-2" href="${href}" target="_blank" rel="noopener">${iconLink()}<span>${label}</span></a>`;
-  const parts: string[] = [];
-  if (dev) parts.push(btn('View my Dev.to', dev.href));
-  if (medium) parts.push(btn('View my Medium', medium.href));
-  el.innerHTML = parts.join('');
-}
-
-function renderBlogs(d: any) {
-  const grid = qs<HTMLElement>('#blogs-grid');
+function renderProjects(d: any) {
+  const grid = qs<HTMLElement>('#projects-grid');
   if (!grid) return;
-  const blogs = d.blogs || [];
-  grid.innerHTML = blogs.map((b: any) => `
-    <article class="card h-full flex flex-col">
-      ${b.image ? `<img src="${b.image}" alt="${b.title}" class="w-full h-40 object-cover" />` : ''}
-      <div class="card-body flex-1 flex flex-col">
-        <h3 class="text-lg font-semibold">${b.title}</h3>
-        ${b.excerpt ? `<p class="mt-2 text-sm text-gray-600 dark:text-gray-300 clamp-2">${b.excerpt}</p>` : ''}
-        <div class="mt-3 flex gap-3 flex-wrap mt-auto">
-          ${b.url ? `<a class="link" href="${b.url}" target="_blank" rel="noopener">Read</a>` : ''}
-          ${b.source ? `<span class="tag">${b.source}</span>` : ''}
-          ${b.date ? `<span class="tag">${b.date}</span>` : ''}
+  const projects = Array.isArray(d.projects) ? d.projects : [];
+  const slugify = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  grid.innerHTML = projects.map((p: any) => {
+    const hasLinks = Array.isArray(p.links) && p.links.length > 0;
+    const status = (p.status || '').toLowerCase();
+    const statusClass = status.includes('live') ? 'status-live' : status.includes('dev') ? 'status-development' : 'status-completed';
+    const slug = slugify(p.title || 'project');
+    return `
+      <article class="project-card" id="${slug}">
+        <div class="project-header">
+          ${p.company ? `<div class="project-company">${p.company}</div>` : ''}
+          <h3 class="project-title">${p.title}</h3>
+          ${p.status ? `<span class="project-status ${statusClass}">${p.status}</span>` : ''}
+          ${p.description ? `<p class="project-subtitle">${p.description}</p>` : ''}
         </div>
-      </div>
-    </article>
-  `).join('');
+        <div class="project-body">
+          ${Array.isArray(p.responsibilities) && p.responsibilities.length ? `
+            <div class="project-responsibilities">
+              ${p.responsibilities.map((resp: string) => `<div class="responsibility-item">${resp}</div>`).join('')}
+            </div>
+          ` : ''}
+          ${Array.isArray(p.tags) && p.tags.length ? `
+            <div class="project-tech-stack">
+              ${p.tags.map((tech: string) => `<span class="tech-tag">${tech}</span>`).join('')}
+            </div>
+          ` : ''}
+          ${hasLinks ? `
+            <div class="project-links">
+              ${p.links.map((link: any, index: number) => `
+                <a href="${link.href}" target="_blank" rel="noopener" class="project-link ${index === 0 ? 'project-link-primary' : 'project-link-secondary'}">${link.label}</a>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
 async function init() {
@@ -112,12 +116,10 @@ async function init() {
     buildNav();
     const d = await loadData();
     renderHeaderFooter(d);
-    profileButtons(d);
-    renderBlogs(d);
+    renderProjects(d);
   } catch (err) {
-     
     console.error(err);
-    alert('Failed to load blogs. Please check data/content.json');
+    alert('Failed to load projects. Please check data/content.json');
   }
 }
 
