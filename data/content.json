@@ -114,7 +114,7 @@
       "title": "GainIO",
       "company": "Gain Solution Ltd",
       "description": "A Customer Relationship Management (CRM) platform designed to streamline client interactions, automate event scheduling, and enhance team collaboration. GainIO provides seamless calendar synchronization, scalable APIs, and efficient workflows to help businesses manage customer relationships effectively.",
-      "status": "devloping...",
+      "status": "In Development",
       "responsibilities": [
         "Developed and enhanced CRM modules with modular and maintainable APIs aligned with evolving business needs.",
         "Optimized PostgreSQL queries to improve system performance, reporting accuracy, and data handling efficiency.",
