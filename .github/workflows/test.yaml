@@ -34,7 +34,7 @@ jobs:
       - name: Prepare dist folder
         run: |
           mkdir -p dist
-          cp index.html blogs.html dist/
+          cp index.html blogs.html projects.html dist/
           cp -r scripts styles assets data dist/
 
       - name: Upload dist as artifact

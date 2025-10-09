@@ -15,13 +15,25 @@
     "image": "../assets/images/saqib_image.png",
     "ctas": [
       { "label": "Get in touch", "href": "#contact", "primary": true },
-      { "label": "GitHub", "href": "https://github.com/Saqib29", "external": true }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Saqib29",
+        "external": true
+      }
     ]
   },
   "socials": [
     { "label": "GitHub", "href": "https://github.com/Saqib29", "icon": "🐙" },
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/saqib-aminul/", "icon": "in" },
-    { "label": "Medium", "href": "https://medium.com/@saqibaminul", "external": "M" },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/saqib-aminul/",
+      "icon": "in"
+    },
+    {
+      "label": "Medium",
+      "href": "https://medium.com/@saqibaminul",
+      "external": "M"
+    },
     { "label": "Dev.to", "href": "https://dev.to/saqib29", "icon": "Dev" }
   ],
   "blogs": [
@@ -53,23 +65,99 @@
       "source": "Dev.to",
       "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftdtj6n0cckxblfcqzl6q.png"
     }
-
   ],
   "about": {
     "html": "<p>Hi, I'm Aminul Islam Saqib, a backend developer passionate about building reliable, scalable, and AI-ready systems. I've worked on projects ranging from CRM platforms and customer support SaaS to EdTech systems and microservice-based applications.</p><p>With experience in Node.js, NestJS, Spring Boot, PostgreSQL, MongoDB, Redis, Docker, and AWS, I specialize in designing APIs and infrastructures that can support AI/ML workflows — whether it's data aggregation, real-time event processing, or integrating intelligent services.</p><p>I'm especially excited about the future of AI-driven automation and how backend systems can power smarter, more adaptive applications.</p>"
   },
   "skills": {
-    "Frontend": ["JavaScript", "TypeScript", "HTML5", "CSS3", "TailwindCSS", "Flutter"],
-    "Backend": ["Node.js", "NestJS", "Express", "Spring Boot", ".NET", "Django", "Flask"],
+    "Frontend": [
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "TailwindCSS",
+      "Flutter"
+    ],
+    "Backend": [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "Spring Boot",
+      ".NET",
+      "Django",
+      "Flask"
+    ],
     "Database": ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
-    "Architecture": ["REST APIs", "GraphQL", "Microservices", "RabbitMQ", "Event-Driven", "SaaS"],
+    "Architecture": [
+      "REST APIs",
+      "GraphQL",
+      "Microservices",
+      "RabbitMQ",
+      "Event-Driven",
+      "SaaS"
+    ],
     "DevOps & Tools": ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
     "Testing & Automation": ["Jest", "Unit Testing", "Cheerio", "Selenium"]
   },
+  "homeProjectTags": [
+    "Node.js",
+    "NestJS",
+    "PostgreSQL",
+    "AWS",
+    "Microservices",
+    "Redis",
+    "GraphQL",
+    "Docker"
+  ],
   "projects": [
     {
+      "title": "GainIO",
+      "company": "Gain Solution Ltd",
+      "description": "A Customer Relationship Management (CRM) platform designed to streamline client interactions, automate event scheduling, and enhance team collaboration. GainIO provides seamless calendar synchronization, scalable APIs, and efficient workflows to help businesses manage customer relationships effectively.",
+      "status": "devloping...",
+      "responsibilities": [
+        "Developed and enhanced CRM modules with modular and maintainable APIs aligned with evolving business needs.",
+        "Optimized PostgreSQL queries to improve system performance, reporting accuracy, and data handling efficiency.",
+        "Worked extensively with AWS services — including Lambda, ECS, SQS, and SAM — to deploy and scale microservices in a serverless environment.",
+        "Integrated Google and Microsoft Calendar APIs to enable real-time event synchronization and scheduling automation.",
+        "Managed Agile sprints via JIRA, ensuring smooth collaboration and timely feature delivery across distributed teams."
+      ],
+      "tags": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "GraphQL",
+        "CI/CD",
+        "AWS (ECS, Lambda, SQS, SAM)",
+        "Jira"
+      ],
+      "links": []
+    },
+    {
+      "title": "EasyDesk",
+      "company": "Gain Solution Ltd",
+      "description": "A multi-tenant SaaS platform that streamlines customer support operations through intelligent ticketing, role-based access, and real-time communication. Designed for scalability and performance, EasyDesk empowers admins, agents, and clients to collaborate efficiently within a unified support ecosystem.",
+      "status": "Live",
+      "responsibilities": [
+        "Architected and optimized the PostgreSQL schema, writing advanced queries to enhance database performance for complex reporting and filtering.",
+        "Implemented RBAC and secure authentication flows for admins, agents, and clients to ensure data security and controlled access.",
+        "Designed and optimized critical business logic to meet evolving customer needs and support rapid feature delivery.",
+        "Built an application-level job queue using AWS Lambda and SQS to offload CPU-intensive background tasks, improving API responsiveness and scalability.",
+        "Integrated continuous delivery via CI/CD pipelines, ensuring smooth and automated deployments."
+      ],
+      "tags": [
+        "Node.js",
+        "PostgreSQL",
+        "GraphQL",
+        "CI/CD",
+        "AWS (Lambda, SQS)",
+        "Agile"
+      ],
+      "links": [{ "label": "Visit Platform", "href": "https://easydesk.app/" }]
+    },
+    {
       "title": "Somoyer School",
-      "company": "Somoy Media Ltd",
+      "company": "Sayburgh Solution Ltd",
       "description": "An e-learning platform offering various digital educational solutions, including online courses, workshops, and career development services. The platform provides free and premium courses with video lessons, notes, quizzes, and assignments.",
       "status": "Live",
       "responsibilities": [
@@ -77,7 +165,15 @@
         "Implemented secure MongoDB data layer with role-based access control, middleware guards, and optimized queries achieving 99.5% system reliability.",
         "Led cross-functional collaboration with frontend teams and conducted code reviews in Agile environment, ensuring seamless API integration and maintainable codebase."
       ],
-      "tags": ["Node.js", "NestJS", "MongoDB", "REST APIs", "RBAC", "JWT", "Agile"],
+      "tags": [
+        "Node.js",
+        "NestJS",
+        "MongoDB",
+        "REST APIs",
+        "RBAC",
+        "JWT",
+        "Agile"
+      ],
       "links": [
         { "label": "Visit Platform", "href": "https://www.somoy.school" }
       ]
@@ -92,7 +188,15 @@
         "Built comprehensive authentication system with JWT tokens, OTP verification, and refresh token rotation ensuring enterprise-level security standards.",
         "Integrated Aamarpay payment gateway with CORS-enabled APIs, supporting multiple payment methods and real-time transaction tracking."
       ],
-      "tags": ["Microservices", "RabbitMQ", "JWT", "NestJS", "CORS", "OTP", "Aamarpay"],
+      "tags": [
+        "Microservices",
+        "RabbitMQ",
+        "JWT",
+        "NestJS",
+        "CORS",
+        "OTP",
+        "Aamarpay"
+      ],
       "links": []
     },
     {
@@ -105,7 +209,14 @@
         "Implemented enterprise-grade authentication with role-based access control and audit trails, meeting strict government security requirements.",
         "Integrated bKash payment gateway with custom APIs and real-time transaction monitoring, achieving 99.8% payment success rate."
       ],
-      "tags": ["NestJS", "MongoDB", "bKash API", "RBAC", "Government", "Security"],
+      "tags": [
+        "NestJS",
+        "MongoDB",
+        "bKash API",
+        "RBAC",
+        "Government",
+        "Security"
+      ],
       "links": []
     },
     {
@@ -118,7 +229,15 @@
         "Developed full-stack solution with Spring Boot APIs and PostgreSQL database, optimizing queries to reduce data processing time by 60%.",
         "Created cross-platform Flutter frontend with advanced analytics dashboard, enabling researchers to visualize complex medical data insights in real-time."
       ],
-      "tags": ["Node.js", "Cheerio", "Redis", "Spring Boot", "PostgreSQL", "Flutter", "Data Analytics"],
+      "tags": [
+        "Node.js",
+        "Cheerio",
+        "Redis",
+        "Spring Boot",
+        "PostgreSQL",
+        "Flutter",
+        "Data Analytics"
+      ],
       "links": []
     }
   ],
@@ -135,7 +254,7 @@
         "Designed microservices architecture with RabbitMQ messaging and Docker containerization, improving system scalability and deployment efficiency by 40%.",
         "Led code reviews and mentored junior developers while delivering multiple client projects including livestock management and POS systems."
       ],
-      "tech": ["Node.js", "PostgreSQL", "Graphql", "CI/CD", "AWS", "Docker"] 
+      "tech": ["Node.js", "PostgreSQL", "Graphql", "CI/CD", "AWS", "Docker"]
     },
     {
       "company": "Sayburgh Solution Ltd",

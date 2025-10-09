@@ -303,50 +303,54 @@ function renderSkills(d: any) {
 
 function renderProjects(d: any) {
   const grid = qs<HTMLElement>('#projects-grid');
-  const projects = d.projects || [];
   if (!grid) return;
-  grid.innerHTML = projects.map((p: any) => {
-    const hasLinks = Array.isArray(p.links) && p.links.length > 0;
-    return `
-    <article class="project-card">
-      <div class="project-header">
-        ${p.company ? `<div class="project-company">${p.company}</div>` : ''}
-        <h3 class="project-title">${p.title}</h3>
-        ${p.description ? `<p class="project-subtitle">${p.description}</p>` : ''}
+
+  const projects = Array.isArray(d.projects) ? d.projects : [];
+  const total = projects.length;
+  // collect top tags by frequency
+  const tagCount = new Map<string, number>();
+  projects.forEach((p: any) => {
+    (p.tags || []).forEach((t: string) => tagCount.set(t, (tagCount.get(t) || 0) + 1));
+  });
+  const computedTopTags = Array.from(tagCount.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([t]) => t);
+  const manualTags = Array.isArray((d as any).homeProjectTags) ? (d as any).homeProjectTags as string[] : [];
+  const topTags = manualTags.length ? manualTags.slice(0, 8) : computedTopTags;
+
+  grid.innerHTML = `
+    <div class="project-callout w-full relative rounded-xl border border-gray-200 dark:border-gray-700 bg-gradient-to-r from-white to-indigo-50/60 dark:from-gray-900 dark:to-gray-800 px-6 py-6 md:px-10 md:py-8 shadow-sm">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+        <div class="flex-1 min-w-0">
+          <h3 class="text-2xl font-extrabold tracking-tight mb-1">Explore my projects</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+            ${total ? `${total}+ professional and personal projects` : 'A curated collection of my recent work'}, including web apps, APIs, automation, and AI.
+          </p>
+          ${topTags.length ? `
+            <div class="mt-3 flex flex-wrap gap-2">
+              ${topTags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+        <div class="shrink-0 w-full md:w-auto flex gap-3 justify-end md:justify-start">
+          <a class="px-5 py-2.5 rounded-md bg-primary text-white hover:bg-primary-dark text-sm md:text-base" href="projects.html">View all projects →</a>
+        </div>
       </div>
-      <div class="project-body">
-        ${Array.isArray(p.responsibilities) && p.responsibilities.length ? `
-          <div class="project-responsibilities">
-            ${p.responsibilities.slice(0, 4).map((resp: string) => `<div class="responsibility-item">${resp}</div>`).join('')}
-          </div>
-        ` : ''}
-        ${Array.isArray(p.tags) && p.tags.length ? `
-          <div class="project-tech-stack">
-            ${p.tags.map((tech: string) => `<span class="tech-tag">${tech}</span>`).join('')}
-          </div>
-        ` : ''}
-        ${hasLinks ? `
-          <div class="project-links">
-            ${p.links.map((link: any, index: number) => `
-              <a href="${link.href}" 
-                 target="_blank" 
-                 rel="noopener" 
-                 class="project-link ${index === 0 ? 'project-link-primary' : 'project-link-secondary'}">
-                ${link.label}
-              </a>
-            `).join('')}
-          </div>
-        ` : `
-          <div class="project-links">
-            <span class="project-link project-link-secondary" style="cursor: default; opacity: 0.7;">
-              Confidential Project
-            </span>
-          </div>
-        `}
-      </div>
-    </article>
+    </div>
   `;
-  }).join('');
+
+  // Inject full-bleed responsive styles once
+  if (!document.getElementById('projects-callout-styles')) {
+    const style = document.createElement('style');
+    style.id = 'projects-callout-styles';
+    style.textContent = `
+      @media (min-width: 768px) {
+        .projects-callout-fullbleed { width: calc(100% + 4rem); left: -2rem; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
 }
 
 function renderExperience(d: any) {
@@ -524,7 +528,7 @@ function buildAutoNav() {
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'projects', label: 'Projects', href: 'projects.html' },
     { id: 'blogs', label: 'Blogs', href: 'blogs.html' },
     { id: 'contact', label: 'Contact' },
   ];
