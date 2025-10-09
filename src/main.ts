@@ -329,7 +329,7 @@ function renderProjects(d: any) {
           </p>
           ${topTags.length ? `
             <div class="mt-3 flex flex-wrap gap-2">
-              ${topTags.map(t => `<span class=\"tag\">${t}</span>`).join('')}
+              ${topTags.map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
           ` : ''}
         </div>
