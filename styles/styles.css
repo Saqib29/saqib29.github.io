@@ -863,6 +863,10 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: inline-flex;
+  align-self: flex-start;
+  width: auto;
+  max-width: max-content;
 }
 
 .status-live {
@@ -1367,3 +1371,20 @@ section#projects > .container #projects-grid .projects-callout-fullbleed {
 
 /* Align with Experience card width (within container) */
 section#projects { overflow-x: visible; }
+
+/* Projects page: force single-column, full-width cards */
+body.projects-page #projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  body.projects-page #projects-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 1024px) {
+  body.projects-page #projects-grid { grid-template-columns: 1fr; }
+}
+/* Optionally widen container on projects page a bit */
+@media (min-width: 1280px) {
+  body.projects-page section.section > .container { max-width: 80rem; }
+}
