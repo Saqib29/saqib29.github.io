@@ -69,6 +69,10 @@
   "about": {
     "html": "<p>Hi, I'm Aminul Islam Saqib, a backend developer passionate about building reliable, scalable, and AI-ready systems. I've worked on projects ranging from CRM platforms and customer support SaaS to EdTech systems and microservice-based applications.</p><p>With experience in Node.js, NestJS, Spring Boot, PostgreSQL, MongoDB, Redis, Docker, and AWS, I specialize in designing APIs and infrastructures that can support AI/ML workflows — whether it's data aggregation, real-time event processing, or integrating intelligent services.</p><p>I'm especially excited about the future of AI-driven automation and how backend systems can power smarter, more adaptive applications.</p>"
   },
+  "aboutCards": {
+    "expertiseText": "Full‑stack focus with Node.js/NestJS and TypeScript. Build scalable REST APIs, microservices, and cloud‑ready backends with Docker and AWS.",
+    "experienceText": "Software Developer with solid experience across startups and enterprise-scale applications. Over several years in professional development, I’ve led backend architecture, API design, and performance optimization — currently driving SaaS and CRM solutions at Gain Solution Ltd."
+  },
   "skills": {
     "Frontend": [
       "JavaScript",

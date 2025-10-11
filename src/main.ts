@@ -226,10 +226,12 @@ function renderAboutCards(d: any) {
   const previous = exp[1];
   const edu = Array.isArray(d.education) ? d.education[0] : null;
 
-  const expertiseText = 'Full‑stack focus with Node.js/NestJS and TypeScript. Build scalable REST APIs, microservices, and cloud‑ready backends with Docker and AWS.';
-  const experienceText = current
-    ? `Currently ${current.role || 'Engineer'} at ${current.company}. Previously ${previous?.company || 'other teams'}. ${years} of hands‑on development.`
-    : `${years} of hands‑on development across startups and products.`;
+  const expertiseText = d.aboutCards?.expertiseText
+    || 'Full‑stack focus with Node.js/NestJS and TypeScript. Build scalable REST APIs, microservices, and cloud‑ready backends with Docker and AWS.';
+  const experienceText = d.aboutCards?.experienceText
+    || (current
+      ? `Currently ${current.role || 'Engineer'} at ${current.company}. Previously ${previous?.company || 'other teams'}. ${years} of hands‑on development.`
+      : `${years} of hands‑on development across startups and products.`);
   const educationText = edu
     ? `${edu.degree || ''} at ${edu.institution || ''}. ${edu.period || ''}.`
     : 'Formal background in Computer Science and Engineering.';
