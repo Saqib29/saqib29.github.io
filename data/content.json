@@ -7,11 +7,11 @@
   },
   "profile": {
     "name": "Aminul Islam Saqib",
-    "resume": "https://drive.google.com/file/d/1TJpVwOFIMsQO0EaYqAwhxCcwFUpNU61W/view?usp=sharing"
+    "resume": "https://drive.google.com/file/d/1UXA-oZubRUYtFcD50YCHxNHgrh6e5aM1/view?usp=sharing"
   },
   "hero": {
     "title": "Hi, I'm Aminul Islam Saqib",
-    "subtitle": "Software Engineer | Node.js, AWS, Microservices & AI‑Enabled Solutions.",
+    "subtitle": "Software Engineer (Backend Focused) | Node.js, AWS, Microservices & AI‑Enabled Solutions.",
     "image": "../assets/images/saqib_image.png",
     "ctas": [
       { "label": "Get in touch", "href": "#contact", "primary": true },
@@ -252,11 +252,13 @@
       "role": "Software Developer",
       "period": "Dec 2024 - Present",
       "location": "Dhaka, Bangladesh",
-      "description": "Somoy School (EdTech) and other products: built secure APIs and backends; Dockerized projects; code reviews; microservices with RabbitMQ; payment gateway integrations.",
+      "description": "A global software consultancy and product company rooted in Bangladesh, specialising in custom web & SaaS solutions, leveraging modern stacks for clients worldwide.",
       "highlights": [
-        "Architected and developed comprehensive EdTech platform features including authentication, payment gateways, certificate generation, and secure APIs, serving thousands of users with 99.9% uptime.",
-        "Designed microservices architecture with RabbitMQ messaging and Docker containerization, improving system scalability and deployment efficiency by 40%.",
-        "Led code reviews and mentored junior developers while delivering multiple client projects including livestock management and POS systems."
+        "Engineered scalable RESTful and GraphQL APIs serving 100K+ daily requests, supporting both B2B and SaaS platforms.",
+        "Architected AWS serverless integrations (Lambda, SQS, SAM) with external service at 95% success.",
+        "Developed “GainIO” CRM platform — designed modular APIs, improved query performance by 40%, and optimized PostgreSQL schema for advanced analytics and reporting.",
+        "Enhanced “EasyDesk” SaaS system by implementing multi-tenant architecture, secure RBAC, and real-time ticketing features using GraphQL subscription",
+        "Improved system performance and deployment reliability by optimizing PostgreSQL queries and refining Docker-based CI/CD workflows."
       ],
       "tech": ["Node.js", "PostgreSQL", "Graphql", "CI/CD", "AWS", "Docker"]
     },
@@ -266,9 +268,9 @@
       "role": "Software Developer",
       "period": "Aug 2023 - Nov 2024",
       "location": "Dhaka, Bangladesh",
-      "description": "Somoy School (EdTech) and other products: built secure APIs and backends; Dockerized projects; code reviews; microservices with RabbitMQ; payment gateway integrations.",
+      "description": "A Bangladesh-based software and SaaS development firm focussed on “design-driven development.” They build bespoke applications across industries (food-tech, media, government) with user-centric design and modern technologies.",
       "highlights": [
-        "Architected and developed comprehensive EdTech platform features including authentication, payment gateways, certificate generation, and secure APIs, serving thousands of users with 99.9% uptime.",
+        "Architected and developed comprehensive EdTech platform features including authentication, payment gateways, certificate generation, and secure APIs, serving thousands of users with 95% uptime.",
         "Designed microservices architecture with RabbitMQ messaging and Docker containerization, improving system scalability and deployment efficiency by 40%.",
         "Led code reviews and mentored junior developers while delivering multiple client projects including livestock management and POS systems."
       ],
@@ -280,11 +282,11 @@
       "role": "Software Developer",
       "period": "Apr 2021 - Apr 2023",
       "location": "Mannheim, Germany",
-      "description": "Backend development and data automation: web crawlers (Node.js/Python), REST APIs with Node.js and Spring Boot, some Flutter frontend contributions.",
+      "description": "A Germany-based specialist in intelligent automation, AI and software robotics for regulated industries (pharma, medical devices, chemicals). They provide custom automation solutions for complex document- and workflow-intensive processes.",
       "highlights": [
         "Built automated data collection systems using Node.js and Python web crawlers, processing millions of medical research records with 95% accuracy for healthcare analytics platform.",
         "Developed full-stack solutions with Spring Boot APIs and Flutter frontend, reducing data processing time by 60% and improving user experience across multiple platforms.",
-        "Implemented automated testing frameworks with Selenium and established CI/CD pipelines, ensuring 99% code coverage and zero-downtime deployments."
+        "Implemented automated testing frameworks with Selenium and cherio, ensuring 95% code coverage."
       ],
       "tech": ["Node.js", "Spring Boot", "PostgreSQL", "Flutter", "Selenium"]
     },
