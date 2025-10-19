@@ -115,39 +115,16 @@
   ],
   "projects": [
     {
-      "title": "GainIO",
-      "company": "Gain Solution Ltd",
-      "description": "A Customer Relationship Management (CRM) platform designed to streamline client interactions, automate event scheduling, and enhance team collaboration. GainIO provides seamless calendar synchronization, scalable APIs, and efficient workflows to help businesses manage customer relationships effectively.",
-      "status": "In Development",
-      "responsibilities": [
-        "Developed and enhanced CRM modules with modular and maintainable APIs aligned with evolving business needs.",
-        "Optimized PostgreSQL queries to improve system performance, reporting accuracy, and data handling efficiency.",
-        "Worked extensively with AWS services — including Lambda, ECS, SQS, and SAM — to deploy and scale microservices in a serverless environment.",
-        "Integrated Google and Microsoft Calendar APIs to enable real-time event synchronization and scheduling automation.",
-        "Managed Agile sprints via JIRA, ensuring smooth collaboration and timely feature delivery across distributed teams."
-      ],
-      "tags": [
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "GraphQL",
-        "CI/CD",
-        "AWS (ECS, Lambda, SQS, SAM)",
-        "Jira"
-      ],
-      "links": []
-    },
-    {
       "title": "EasyDesk",
       "company": "Gain Solution Ltd",
       "description": "A multi-tenant SaaS platform that streamlines customer support operations through intelligent ticketing, role-based access, and real-time communication. Designed for scalability and performance, EasyDesk empowers admins, agents, and clients to collaborate efficiently within a unified support ecosystem.",
       "status": "Live",
       "responsibilities": [
-        "Architected and optimized the PostgreSQL schema, writing advanced queries to enhance database performance for complex reporting and filtering.",
-        "Implemented RBAC and secure authentication flows for admins, agents, and clients to ensure data security and controlled access.",
-        "Designed and optimized critical business logic to meet evolving customer needs and support rapid feature delivery.",
-        "Built an application-level job queue using AWS Lambda and SQS to offload CPU-intensive background tasks, improving API responsiveness and scalability.",
-        "Integrated continuous delivery via CI/CD pipelines, ensuring smooth and automated deployments."
+        "Designed a tenant-aware PostgreSQL schema and optimized queries/indexing to keep complex filters and reports performant at scale.",
+        "Implemented secure RBAC and authentication flows for admins, agents, and clients to enforce least-privilege access.",
+        "Built real-time ticket updates and collaboration features using GraphQL subscriptions.",
+        "Developed an application-level job queue with AWS Lambda and SQS to offload CPU-intensive background tasks, keeping APIs responsive under load.",
+        "Expanded critical business logic to support evolving customer requirements and rapid feature delivery."
       ],
       "tags": [
         "Node.js",
@@ -158,6 +135,30 @@
         "Agile"
       ],
       "links": [{ "label": "Visit Platform", "href": "https://easydesk.app/" }]
+    },
+    {
+      "title": "GainIO",
+      "company": "Gain Solution Ltd",
+      "description": "A Customer Relationship Management (CRM) platform designed to streamline client interactions, automate event scheduling, and enhance team collaboration. GainIO provides seamless calendar synchronization, scalable APIs, and efficient workflows to help businesses manage customer relationships effectively.",
+      "status": "In Development",
+      "responsibilities": [
+        "Architected modular REST/GraphQL APIs in Node.js (Express) to accelerate delivery and keep services maintainable as requirements evolved.",
+        "Optimized PostgreSQL with targeted indexing, query refactors, and schema tuning — improving query performance by 40% on reporting and CRM modules.",
+        "Designed and deployed event-driven microservices on AWS (Lambda, ECS, SQS, SAM) to support asynchronous workflows and scalable processing.",
+        "Integrated Google and Microsoft Calendar APIs with AWS Lambda and SQS to enable reliable, near real-time event synchronization and scheduling automation.",
+        "Implemented CI/CD pipelines to automate testing and multi-environment deployments, improving delivery reliability and reducing manual release effort.",
+        "Managed Agile sprints via JIRA, ensuring on-time feature delivery and cross-team collaboration."
+        ],
+      "tags": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "GraphQL",
+        "CI/CD",
+        "AWS (ECS, Lambda, SQS, SAM)",
+        "Jira"
+      ],
+      "links": []
     },
     {
       "title": "Somoyer School",
@@ -254,11 +255,12 @@
       "location": "Dhaka, Bangladesh",
       "description": "A global software consultancy and product company rooted in Bangladesh, specialising in custom web & SaaS solutions, leveraging modern stacks for clients worldwide.",
       "highlights": [
-        "Engineered scalable RESTful and GraphQL APIs serving 100K+ daily requests, supporting both B2B and SaaS platforms.",
-        "Architected AWS serverless integrations (Lambda, SQS, SAM) with external service at 95% success.",
-        "Developed “GainIO” CRM platform — designed modular APIs, improved query performance by 40%, and optimized PostgreSQL schema for advanced analytics and reporting.",
-        "Enhanced “EasyDesk” SaaS system by implementing multi-tenant architecture, secure RBAC, and real-time ticketing features using GraphQL subscription",
-        "Improved system performance and deployment reliability by optimizing PostgreSQL queries and refining Docker-based CI/CD workflows."
+        "<strong>Engineered scalable RESTful and GraphQL APIs</strong> serving 100K+ daily requests, supporting both B2B and SaaS platforms.",
+        "<strong>Architected AWS serverless integrations</strong> (Lambda, SQS, SAM) with external service at 95% success.",
+        "<strong>Integrated Google and Microsoft APIs</strong>, including calendar and authentication services, to enable seamless event synchronization and smart scheduling automation across business platforms.",
+        "<strong>Developed “GainIO” CRM platform</strong> — designed modular APIs, improved query performance by 40%, and optimized PostgreSQL schema for advanced analytics and reporting.",
+        "<strong>Enhanced “EasyDesk” SaaS system</strong> by implementing multi-tenant architecture, secure RBAC, and real-time ticketing features using GraphQL subscription",
+        "<strong>Improved system performance</strong> and deployment reliability by optimizing PostgreSQL queries and refining Docker-based CI/CD workflows."
       ],
       "tech": ["Node.js", "PostgreSQL", "Graphql", "CI/CD", "AWS", "Docker"]
     },
@@ -270,9 +272,11 @@
       "location": "Dhaka, Bangladesh",
       "description": "A Bangladesh-based software and SaaS development firm focussed on “design-driven development.” They build bespoke applications across industries (food-tech, media, government) with user-centric design and modern technologies.",
       "highlights": [
-        "Architected and developed comprehensive EdTech platform features including authentication, payment gateways, certificate generation, and secure APIs, serving thousands of users with 95% uptime.",
-        "Designed microservices architecture with RabbitMQ messaging and Docker containerization, improving system scalability and deployment efficiency by 40%.",
-        "Led code reviews and mentored junior developers while delivering multiple client projects including livestock management and POS systems."
+        "Developed scalable backend services for multiple production applications, including a large EdTech and B2C delivery platform, ensuring maintainability and efficient data flow.",
+        "<strong>Architected microservices</strong> using <strong>NestJS</strong> for authentication, role-based access, and 2FA — improving modularity and scalability.",
+        "Architected NestJS-based <strong>microservices</strong> for authentication, role-based access, and 2FA, integrating <strong> RabbitMQ</strong> for asynchronous communication to enhance modularity, <strong>scalability</strong>, and overall system <strong>reliability</strong>.",
+        "Integrated SSLCOMMERZ <strong>payment gateway</strong> and implemented <strong>Redis caching</strong> to boost performance, reduce transaction latency, and optimize database query efficiency.",
+        "Collaborated closely with frontend teams to ensure seamless API integration and consistent user experience, while supporting team growth through code reviews and promoting <strong>Agile best practices.</strong>"
       ],
       "tech": ["Node.js", "NestJS", "MongoDB", "RabbitMQ", "Docker"]
     },
