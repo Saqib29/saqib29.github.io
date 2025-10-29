@@ -158,7 +158,7 @@
         "AWS (ECS, Lambda, SQS, SAM)",
         "Jira"
       ],
-      "links": []
+      "links": [{ "label": "Visit Platform", "href": "https://test.gain.io/" }]
     },
     {
       "title": "Somoyer School",
