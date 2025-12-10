@@ -1,32 +1,45 @@
- name: Deploy to Vercel
+name: Deploy to Vercel
 
- on:
-   pull_request_target:
-     types: [closed]
-     branches:
-       - vercel
+on:
+  pull_request_target:
+    types: [closed]
+    branches:
+      - vercel
 
- jobs:
-   deploy:
-     if: github.event.pull_request.merged == true
-     runs-on: ubuntu-latest
-     steps:
-       - name: Checkout code
-         uses: actions/checkout@v4
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-       - name: Download artifact
-         uses: dawidd6/action-download-artifact@v6
-         with:
-           workflow: test.yaml
-           pr: ${{ github.event.number }}
-           name: portfolio-dist
-           path: dist/
+      - name: Download artifact
+        id: download-artifact
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          workflow: test.yaml
+          pr: ${{ github.event.pull_request.number }}
+          name: portfolio-dist
+          path: dist/
 
-       - name: Deploy to Vercel
-         uses: amondnet/vercel-action@v25
-         with:
-           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-           working-directory: ./dist
-           vercel-args: '--prod'
+      - name: Rebuild if artifact not found
+        if: steps.download-artifact.outcome == 'failure'
+        run: |
+          echo "Artifact not found, rebuilding..."
+          npm install -g pnpm
+          pnpm install
+          pnpm build
+          mkdir -p dist
+          cp index.html blogs.html projects.html dist/
+          cp -r scripts styles assets data dist/
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./dist
+          vercel-args: "--prod"
