@@ -1,36 +1,38 @@
 name: Deploy to Vercel
 
 on:
-  pull_request_target:
-    types: [closed]
+  push:
     branches:
       - vercel
 
 jobs:
   deploy:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download artifact
-        id: download-artifact
-        continue-on-error: true
-        uses: dawidd6/action-download-artifact@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          workflow: test.yaml
-          pr: ${{ github.event.pull_request.number }}
-          name: portfolio-dist
-          path: dist/
+          node-version: 22
 
-      - name: Rebuild if artifact not found
-        if: steps.download-artifact.outcome == 'failure'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run lint checks
+        run: pnpm lint
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Prepare dist folder
         run: |
-          echo "Artifact not found, rebuilding..."
-          npm install -g pnpm
-          pnpm install
-          pnpm build
           mkdir -p dist
           cp index.html blogs.html projects.html dist/
           cp -r scripts styles assets data dist/
